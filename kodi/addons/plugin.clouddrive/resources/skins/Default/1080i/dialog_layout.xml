@@ -1,0 +1,114 @@
+<window id="1" type="dialog">
+    <controls>
+        <!-- 背景长方形对话框 -->
+        <control type="image">
+            <description>Background Rectangular Dialog</description>
+            <left>0</left>
+            <top>0</top>
+            <width>1920</width>
+            <height>1080</height>
+            <texture border="20">/storage/.kodi/addons/plugin.jihuo/media/dim-overlay.png</texture> <!-- 这是一个假设的背景图 -->
+        </control>
+        
+        <!-- 二维码图片 -->
+        <control type="image" id="100">
+            <description>QR Code Image</description>
+            <left>510</left>
+            <top>375</top>
+            <width>300</width>
+            <height>300</height>
+            <texture>qrcode.png</texture>
+        </control>
+
+        <!-- 文本信息 -->
+        <control type="label" id="101">
+            <description>Info Label</description>
+            <left>860</left>
+            <top>350</top>
+            <width>550</width>
+            <height>50</height>
+            <label>请扫描二维码激活.</label>
+            <font>font13</font>
+            <textcolor>white</textcolor>
+        </control>
+        
+        <!-- IP地址信息 -->
+        <control type="label" id="102">
+            <description>IP Info</description>
+            <left>860</left>
+            <top>410</top>
+            <width>550</width>
+            <height>50</height>
+            <label>IP: xxx.xxx.xxx.xxx</label>
+            <font>font13</font>
+            <textcolor>white</textcolor>
+        </control>
+        
+        <!-- 备注信息 -->
+        <control type="label" id="103">
+            <description>VKEY Info</description>
+            <left>860</left>
+            <top>470</top>
+            <width>800</width>
+            <height>50</height>
+            <label>备注: XXXXXXXX</label>
+            <font>font13</font>
+            <textcolor>white</textcolor>
+        </control>
+        <!-- 备注信息 -->
+        <control type="label" id="104">
+            <description>备注 Info</description>
+            <left>860</left>
+            <top>530</top>
+            <width>800</width>
+            <height>50</height>
+            <label>CD2版本: XXXXXXXX</label>
+            <font>font13</font>
+            <textcolor>white</textcolor>
+        </control>        
+        <!--CD2+AList版本号 -->
+        <control type="label" id="105">
+            <description>备注 Info</description>
+            <left>860</left>
+            <top>590</top>
+            <width>800</width>
+            <height>50</height>
+            <label>Alist版本: XXXXXXXX</label>
+            <font>font13</font>
+            <textcolor>white</textcolor>
+        </control>
+        <!--AList访问地址 -->
+        <control type="label" id="106">
+            <description>备注 Info</description>
+            <left>710</left>
+            <top>930</top>
+            <width>800</width>
+            <height>50</height>
+            <label>AList地址：{self.local_ip}:5244\n    用户名：admin 密码：1234</label>
+            <font>font13</font>
+            <textcolor>white</textcolor>
+        </control>
+        <!--温馨提示 -->
+        <control type="label" id="107">
+            <description>备注 Info</description>
+            <left>870</left>
+            <top>860</top>
+            <width>800</width>
+            <height>50</height>
+            <label>温馨提示</label>
+            <font>font13</font>
+            <textcolor>white</textcolor>
+        </control>
+        <!--已挂载的网盘 -->
+        <control type="label" id="108">
+            <description>备注 Info</description>
+            <left>860</left>
+            <top>650</top>
+            <width>800</width>
+            <height>50</height>
+            <label>已挂载的云盘</label>
+            <font>font13</font>
+            <textcolor>white</textcolor>
+        </control>                                   
+    </controls>    
+</window>

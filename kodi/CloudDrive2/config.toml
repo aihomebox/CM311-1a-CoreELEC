@@ -1,0 +1,19 @@
+[webconfig]
+www_root = "./wwwroot"
+http_port = 80
+https_port = 19799
+webdav_root = "/"
+webdav_readonly = false
+webdav_enable_guest = false
+
+[[mount_points]]
+name = "CloudDrive"
+source_path = "/"
+mount_point = "/storage/videos/CloudDrive"
+read_only = false
+uid = 0
+gid = 0
+permission = "0755"
+local_mount = true
+auto_mount = true
+
