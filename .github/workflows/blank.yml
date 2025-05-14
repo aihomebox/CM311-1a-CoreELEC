@@ -1,15 +1,15 @@
-name: Build CoreELEC for CM311-1a
+name: Build CoreELEC for E900V22C
 
 on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/twfjcn/CM311-1a-CoreELEC
+  REPO_URL: https://github.com/twfjcn/E900V22C-CoreELEC
   TZ: Asia/Shanghai
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
     - name: Checkout
@@ -26,13 +26,11 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
-
     - name: Clone source code
       working-directory: /workdir
       run: |
         git clone $REPO_URL --depth=1 coreelec
         ln -sf /workdir/coreelec $GITHUB_WORKSPACE/coreelec
-
     - name: Compile the image
       run: |
         cd coreelec
@@ -40,14 +38,13 @@ jobs:
         ./build.sh
         echo "FILE_DATE=$(date +"%Y%m%d")" >> $GITHUB_ENV
         echo "compile_status=success" >> $GITHUB_ENV
-
     - name: Upload image to release
       uses: softprops/action-gh-release@v2.1.0
       if: ${{ env.compile_status == 'success' }} && !cancelled()
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: CoreELEC_CM311-1a_${{ env.FILE_DATE }}
+        tag_name: CoreELEC_E900V22C_${{ env.FILE_DATE }}
         files: coreelec/*.img.gz
 
     - name: Delete old releases
@@ -57,4 +54,4 @@ jobs:
       with:
         keep_latest: 1
         delete_tags : true
-        delete_tag_pattern : CM311-1a
+        delete_tag_pattern : E900V22C
