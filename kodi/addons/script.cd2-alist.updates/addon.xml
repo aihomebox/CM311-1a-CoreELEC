@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.cd2-alist.updates"
+       name="更新CD2+AList"
+       version="0.0.1"
+       provider-name="AIHOME">
+  <requires>
+  </requires>
+  <extension point="xbmc.python.script" library="cd2-alist.py" />
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary>Update CD2+AList</summary>
+    <description>点击运行,即可更新CloudDrive2和AList</description>
+    <source></source>
+   <assets>
+	<icon>icon.png</icon>
+  </assets>
+  </extension>
+</addon>

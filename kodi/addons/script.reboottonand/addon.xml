@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.reboottonand"
+       name="重启到安卓"
+       version="0.0.1"
+       provider-name="AIHOME">
+  <requires>
+  </requires>
+  <extension point="xbmc.python.script" library="default.py" />
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary>Reboots to nand if possible</summary>
+    <description>Reboots to nand if enabled in amlogic ELECs</description>
+    <source></source>
+ <assets>
+                 <icon>icon.png</icon>
+  </assets>
+  </extension>
+</addon>
