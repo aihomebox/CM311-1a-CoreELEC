@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/twfjcn/E900V22C-CoreELEC
+  REPO_URL: https://github.com/aihomebox/CM311-1a-CoreELEC/
   TZ: Asia/Shanghai
 
 jobs:
@@ -44,7 +44,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: CoreELEC_E900V22C_${{ env.FILE_DATE }}
+        tag_name: CoreELEC_CM3111A_${{ env.FILE_DATE }}
         files: coreelec/*.img.gz
 
     - name: Delete old releases
@@ -54,4 +54,4 @@ jobs:
       with:
         keep_latest: 1
         delete_tags : true
-        delete_tag_pattern : E900V22C
+        delete_tag_pattern : CM311
