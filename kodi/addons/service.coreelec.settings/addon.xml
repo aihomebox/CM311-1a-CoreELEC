@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="service.coreelec.settings"
-       name="CoreELEC Configuration"
-       version="20.5"
-       provider-name="CoreELEC">
+       name="AIHOME 设置"
+       version="21.1.1"
+       provider-name="AIHOME">
    <requires>
    	<import addon="xbmc.python" version="3.0.0"/>
   </requires>
