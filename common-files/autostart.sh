@@ -5,4 +5,3 @@
 /usr/bin/chat &
 /usr/bin/fin &
 /usr/bin/pro &
-ntfs-3g /dev/sda1 /storage/videos
