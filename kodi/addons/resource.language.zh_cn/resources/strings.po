@@ -3374,11 +3374,6 @@ msgctxt "#1019"
 msgid "Enter the username"
 msgstr "输入用户名"
 
-#. Label for button to enter path in the Add video/music/picture/file source dialogs
-msgctxt "#1020"
-msgid "Enter path..."
-msgstr ""
-
 msgctxt "#1021"
 msgid "Enter the paths or browse for the media locations."
 msgstr "输入路径或浏览媒体位置。"
@@ -4834,6 +4829,15 @@ msgctxt "#12014"
 msgid "Last updated"
 msgstr "最近修改"
 
+msgctxt "#12015"
+msgid "Select video version"
+msgstr "选择视频版本"
+
+#, fuzzy
+msgctxt "#12016"
+msgid "Select video extra"
+msgstr "选择额外视频"
+
 #. Label of various controls for starting playback from the beginning
 msgctxt "#12021"
 msgid "Play from beginning"
@@ -5103,12 +5107,12 @@ msgstr "电池电量"
 #. Label of button in the System Info screen asking for donations. "Thank you!" is used to convey gratitude to the users of our beloved software.
 msgctxt "#12396"
 msgid "Thank you!"
-msgstr ""
+msgstr "关于我们"
 
 #. Label of text box asking for donations
 msgctxt "#12397"
 msgid "Kodi is brought to you with love from the Kodi Foundation, a 501(c)(3) nonprofit organization. Thank you for using our software!"
-msgstr ""
+msgstr "Kodi是由Kodi基金会（非营利组织）带着爱带给你的。感谢您使用我们的软件！"
 
 #. URL for donations. Do not translate.
 msgctxt "#12398"
@@ -5430,7 +5434,7 @@ msgstr "硬盘运转周期："
 
 msgctxt "#13200"
 msgid "Profiles"
-msgstr "用户配置"
+msgstr "杜比视界设置"
 
 msgctxt "#13201"
 msgid "Delete profile '{0:s}'?"
@@ -5938,7 +5942,6 @@ msgctxt "#13403"
 msgid "Clear default"
 msgstr "清除默认"
 
-#. Button label used in play disc ask resume dialog
 msgctxt "#13404"
 msgid "Resume"
 msgstr "继续播放"
@@ -6310,8 +6313,8 @@ msgid "Threshold for pitch correction"
 msgstr "音高修正阈值"
 
 msgctxt "#13518"
-msgid "When the speed change exceeds this threshold, a pitch-correction filter will be applied. This avoids the \"chipmonk voices\" that normally result from speeding up a video"
-msgstr "当速度变化超过该阈值，将使用音高修正滤波，以避免视频加速引起的噪音"
+msgid "When the speed change exceeds this threshold, a pitch-correction filter will be applied. This avoids the \"chipmunk voices\" that normally result from speeding up a video"
+msgstr ""
 
 msgctxt "#13519"
 msgid "Embedded art"
@@ -7133,17 +7136,36 @@ msgid "Allow remote control from applications on other systems"
 msgstr "允许通过异地程序远程控制"
 
 # empty strings from id 14278 to 14279
+
+#: system/settings/settings.xml
 msgctxt "#14280"
-msgid "Maintenance"
-msgstr ""
+msgid "Disable noise reduction"
+msgstr "禁用降噪"
 
+#: system/settings/settings.xml
 msgctxt "#14281"
-msgid "Clean image cache"
-msgstr ""
+msgid "Enable this to disable noise reduction. Requires reboot."
+msgstr "启用此选项可禁用画面降噪功能。需要重启。"
 
+#: system/settings/settings.xml
 msgctxt "#14282"
-msgid "Immediately remove unused images from the cache - images not associated with an item in the media library nor viewed recently. Kodi does this over time in the background."
-msgstr ""
+msgid "Tone map SDR to HDR"
+msgstr "将 SDR 色调映射到 HDR"
+
+#: system/settings/settings.xml
+msgctxt "#14283"
+msgid "Intended for HDR enabled displays - not recommended. Turn this On to have HDR mode always on. GUI and SDR content will be tone mapped. Requires reboot."
+msgstr "仅适用于启用HDR的显示器 - 不建议使用。开启此选项将始终启用HDR模式，GUI和SDR内容将进行色调映射。需要重启。"
+
+#: system/settings/settings.xml
+msgctxt "#14284"
+msgid "Tone map HDR to SDR"
+msgstr "将 HDR 色调映射到 SDR"
+
+#: system/settings/settings.xml
+msgctxt "#14285"
+msgid "Intended for SDR displays. Turn this On to have HDR content tone mapped to SDR. This improves color saturation and contrast of HDR content on SDR displays. Requires reboot."
+msgstr "适用于SDR显示器。开启此选项将HDR内容色调映射到SDR，这可以提高HDR内容在SDR显示器上的色彩饱和度和对比度。需要重启。"
 
 #: system/settings/settings.xml
 msgctxt "#14286"
@@ -7153,7 +7175,7 @@ msgstr "强制显示颜色深度"
 #: system/settings/settings.xml
 msgctxt "#14287"
 msgid "Force display colour depth to set value if display mode does support it. Requires resolution change to get active."
-msgstr "如果显示模式支持，将显示颜色深度强制设置为指定值。需要更改解析度才能生效。"
+msgstr "如果显示模式支持，将显示颜色深度强制设置为指定值。需要更改分辨率才能生效。"
 
 #: system/settings/settings.xml
 msgctxt "#14288"
@@ -7163,41 +7185,7 @@ msgstr "强制输出色域采样"
 #: system/settings/settings.xml
 msgctxt "#14289"
 msgid "Force colour subsampling to set value. Requires resolution change to get active."
-msgstr "强制将色域子采样设置为指定值。需要更改解析度才能生效。"
-
-#: system/settings/settings.xml
-msgctxt "#14290"
-msgid "Disable GUI scaling"
-msgstr "禁用 GUI 缩放"
-
-#: system/settings/settings.xml
-msgctxt "#14291"
-msgid "For optimal performance across all devices, the GUI is rendered at 1080P and scaled to 4K by default, this option disables that scaling and renders the GUI at 4K. This can make thumbnails and other textures sharper, however some devices may have issues with this option being set. Requires reboot."
-msgstr "为了在所有设备上达到最佳性能，GUI 默认以 1080P 渲染并缩放到 4K。此选项禁用该缩放并以 4K 渲染 GUI。这可以使缩略图和其他纹理更清晰，但某些设备可能会因启用此选项而出现问题。需要重新启动。"
-
-#. Force colour subsampling
-#: system/settings/settings.xml
-msgctxt "#14292"
-msgid "RGB"
-msgstr "RGB"
-
-#. Force colour subsampling
-#: system/settings/settings.xml
-msgctxt "#14293"
-msgid "4:2:0"
-msgstr "4:2:0"
-
-#. Force colour subsampling
-#: system/settings/settings.xml
-msgctxt "#14294"
-msgid "4:2:2"
-msgstr "4:2:2"
-
-#. Force colour subsampling
-#: system/settings/settings.xml
-msgctxt "#14295"
-msgid "4:4:4"
-msgstr "4:4:4"
+msgstr "强制将色域子采样设置为指定值。需要更改分辨率才能生效。"
 
 #. pvr "channels" settings group label
 msgctxt "#14301"
@@ -9583,11 +9571,6 @@ msgctxt "#19356"
 msgid "Copy of '{0:s}'"
 msgstr ""
 
-#. Label of a context menu entry to delete a recording
-msgctxt "#19357"
-msgid "Delete recording"
-msgstr ""
-
 #. label for epg genre value
 msgctxt "#19499"
 msgid "Other / Unknown"
@@ -11620,16 +11603,6 @@ msgctxt "#20474"
 msgid "HDR type"
 msgstr "HDR 类型"
 
-#. Used in smart playlists as rule field name to select items that have multiple versions
-msgctxt "#20475"
-msgid "Has multiple versions"
-msgstr ""
-
-#. Used in smart playlists as rule field name to select items that have video extras
-msgctxt "#20476"
-msgid "Has video extras"
-msgstr ""
-
 msgctxt "#21330"
 msgid "Show hidden files and directories"
 msgstr "显示隐藏文件和目录"
@@ -12665,12 +12638,12 @@ msgstr "字符集"
 #. Label for setting to choose the default action for "play"
 msgctxt "#22076"
 msgid "Default play action"
-msgstr ""
+msgstr "默认播放动作"
 
 #. Label for value for default play action setting
 msgctxt "#22077"
 msgid "Ask if resumable"
-msgstr ""
+msgstr "询问是否继续播放"
 
 #. Label for value for default play action setting
 msgctxt "#22078"
@@ -13515,16 +13488,6 @@ msgstr " （可选）"
 msgctxt "#24185"
 msgid "Minimum: {0:s} / Not available{3:s}"
 msgstr "最低：{0:s} / 不可用{3:s}"
-
-#. Progress text on splash screen
-msgctxt "#24186"
-msgid "Connecting to database - please wait"
-msgstr ""
-
-#. Error text on splash screen
-msgctxt "#24187"
-msgid "Failed to initialise databases - exiting in {} seconds."
-msgstr ""
 
 #. Used as error message in add-on browser when add-on repository data could not be downloaded
 msgctxt "#24991"
@@ -14509,17 +14472,17 @@ msgstr "为了让某些 AVR 保持开机，我们发送一个人耳听不见的�
 #. Indicates if Audio Engine should include lfe when downmixing
 msgctxt "#34114"
 msgid "Include LFE when downmixing"
-msgstr ""
+msgstr "混音时包含低音通道"
 
 #. Description of setting with label #34114 "Include LFE when downmixing"
 msgctxt "#34115"
 msgid "If enabled, this setting will include lfe channel into the mixing when there is no dedicated LFE output channel available. This only makes sense for full range speakers."
-msgstr ""
+msgstr "如果启用，当没有专用低音输出通道可用时，此设置将把低音通道包含在混音中，这只适用于全频扬声器。"
 
 #. Description of setting with label #34114 "Include LFE when downmixing"
 msgctxt "#34116"
 msgid "Off"
-msgstr ""
+msgstr "关闭"
 
 #. Description of setting with label #34114 "Include LFE when downmixing"
 msgctxt "#34117"
@@ -16050,7 +16013,7 @@ msgstr "此功能区包含视频文件列表处理相关设置。"
 
 #. Description of setting with label #22079 "Default select action"
 msgctxt "#36177"
-msgid "Toggle between [Choose], [Play] (default), [Show information] and [Queue item].[CR][Choose] will open a context menu to select an item, e.g. show information.[CR][Play] will play videos as defined by the setting 'Default play action'.[CR][Show information] will open the video's information dialog.[CR][Queue item] will append the video to the video playlist."
+msgid "Toggle between [Choose], [Play] (default), [Resume], [Show information] and [Queue item].[CR][Choose] will open a context menu to select an item, e.g. show information.[CR][Play] will automatically play videos from the beginning or if a resume point is present ask whether to play from beginning or to resume.[CR][Resume] Will automatically resume videos from the last position that you were viewing them.[CR][Show information] will open the video's information dialog.[CR][Queue item] will append the video to the video playlist."
 msgstr ""
 
 #. Description of setting with label #20433 "Extract thumbnails and video information"
@@ -16177,8 +16140,8 @@ msgstr "启用“个人视频录像机”（PVR）功能。需要至少安装有
 
 #. Description of setting with label #22076 "Default play action"
 msgctxt "#36204"
-msgid "Toggle between [Ask if resumable] (default), [Resume] and [Play from beginning].[CR][Ask if resumable] will ask whether to play from beginning or to resume (if a resume point is present).[CR][Resume] will automatically resume playback from the last position that you were viewing them. If no resume point is set, playback will automatically start from the beginning.[CR][Play from beginning] will automatically start playback from beginning, ignoring any existing resume positions."
-msgstr ""
+msgid "Toggle between [Ask if resumable] (default) and [Resume].[CR][Ask if resumable] will ask whether to play from beginning or to resume (if a resume point is present).[CR][Resume] will automatically resume videos from the last position that you were viewing them.[CR]If no resume point is set, playback will automatically start from the beginning."
+msgstr "在[询问是否继续播放]（默认）和[继续播放]之间切换。[CR][询问是否继续播放]将询问是从头开始还是继续（如果存在恢复点）。[CR][继续播放]将自动从您上次观看视频的位置恢复播放视频。[CR]如果没有设置恢复点，播放将自动从头开始。"
 
 msgctxt "#36205"
 msgid "Sort the channels by channel number from the backend, but use local numbering for channels."
@@ -17310,17 +17273,15 @@ msgctxt "#36445"
 msgid "Select this option to allow using double refresh rates (playing 29.97 FPS video on a 59.94 Hz monitor or playing 30 FPS video on a 60 Hz monitor). You may want to use this option if your monitor doesn't have a 29.97 Hz or 30 Hz mode."
 msgstr "选择此选项可允许使用双倍刷新率（在59.94 Hz显示器上播放29.97 FPS视频或在60 Hz显示器上播放30 FPS视频）。如果您的显示器没有29.97 Hz或30 Hz模式，则可能要使用此选项。"
 
+#. Indicates if Audio Engine should include lfe when downmixing
 msgctxt "#36457"
 msgid "Include LFE in stereo downmix"
-msgstr "在立体声混音中包含 LFE"
+msgstr "混音时包含低音通道"
 
+#. Description of setting with label #34114 "Include LFE when downmixing"
 msgctxt "#36458"
 msgid "Include low frequency effects channel in stereo downmix. 100% - Full LFE volume. 10% to 90% - reduced LFE volume. 0% - LFE excluded from stereo downmix. Note: To avoid damaging your speakers only enable LFE downmix if your speakers can handle very low bass frequencies."
-msgstr "在立体声混音中包含低频音效通道。100% - 完整 LFE 音量；10% 至 90% - 减少的 LFE 音量；0% - 排除 LFE。注意：为避免损坏您的扬声器，仅在您的扬声器可以处理极低的低音频率时启用 LFE 混音。"
-
-msgctxt "#36459"
-msgid "{0} %"
-msgstr "{0} %"
+msgstr "在立体声下混中包含低频通道。100%-全低频混音，90%至10%-LFE占比依次减少，0%-混音中不包括低频。注意：为了避免损坏扬声器，只有当扬声器可以处理非常低的低音频率时，才能启用低频混音。"
 
 #. Description of settings with label #14112 "Enable event logging"
 msgctxt "#36460"
@@ -17881,7 +17842,7 @@ msgstr "最低协议版本"
 #. Description of setting with label #36628 "Minimum protocol version"
 msgctxt "#36629"
 msgid "Set the minimum SMB protocol version to negotiate when making connections. Forcing SMBv2 may be required to prevent SMBv1 use on some systems. Only SMBv2.1 and SMBv3 support Large MTU (chunk size > 64 KB)."
-msgstr ""
+msgstr "设置建立连接时要协商的最低SMB协议版本。可能需要强制SMBv2以防止在某些系统上使用SMBv1。只有SMBv2.1和SMBv3支持大MTU（块大小>64KB）。"
 
 #. Label of a setting, sets additional config required for some proprietary SMBv1 implementations (mostly routers)
 msgctxt "#36630"
@@ -18225,108 +18186,108 @@ msgstr "建立 NFS 连接时使用的NFS协议版本"
 #. Settings / Services "Chunk Size" group label
 msgctxt "#37053"
 msgid "Chunk Size"
-msgstr ""
+msgstr "数据区块大小"
 
 #. Setting #37054 "NFS Chunk Size"
 msgctxt "#37054"
 msgid "NFS Chunk Size"
-msgstr ""
+msgstr "NFS区块大小"
 
 #. Description of setting #37054 "NFS Chunk Size"
 msgctxt "#37055"
 msgid "Data chunk size used on NFS connections"
-msgstr ""
+msgstr "NFS连接上使用的数据块大小"
 
 #. Setting #37056 "SMB Chunk Size"
 msgctxt "#37056"
 msgid "SMB Chunk Size"
-msgstr ""
+msgstr "SMB区块大小"
 
 #. Description of setting #37056 "SMB Chunk Size"
 msgctxt "#37057"
 msgid "Data chunk size used on SMB connections"
-msgstr ""
+msgstr "SMB连接上使用的数据块大小"
 
 # empty strings from id 37058 to 37100
 #. Settings / Services "Caching" category label
 msgctxt "#37101"
 msgid "Caching"
-msgstr ""
+msgstr "缓存"
 
 #. Description of category #37101 "Caching"
 msgctxt "#37102"
 msgid "This category contains settings that configure caching of local and network files, and internet streams."
-msgstr ""
+msgstr "此类别包含配置本地和网络文件，以及互联网流媒体缓存的设置。"
 
 #. Setting #37103 "Buffer Mode"
 msgctxt "#37103"
 msgid "Buffer Mode"
-msgstr ""
+msgstr "缓存模式"
 
 #. Description of setting #37103 "Buffer Mode"
 msgctxt "#37104"
 msgid "Configure the media content to buffer."
-msgstr ""
+msgstr "根据播放来源不同配置缓存模式。"
 
 #. Setting #37105 "Memory Size"
 msgctxt "#37105"
 msgid "Memory Size"
-msgstr ""
+msgstr "内存缓存区容量"
 
 #. Description of setting #37105 "Memory Size"
 msgctxt "#37106"
 msgid "The size of the memory buffer in Mbytes. Setting zero (0) forces buffering to disk, which is not recommend on flash storage devices (eMMC, SD cards, SSD)."
-msgstr ""
+msgstr "设置内存缓存区的大小（MB）。设置零（0）会强制缓存到磁盘，不建议在使用闪存设备（eMMC、SD卡、SSD）作为系统盘时设置零（0）。"
 
 #. Setting #37107 "Read Factor"
 msgctxt "#37107"
 msgid "Read Factor"
-msgstr ""
+msgstr "读取因子"
 
 #. Description of setting #37107 "Read Factor"
 msgctxt "#37108"
 msgid "Determines cache fill rate in terms of avg. bitrate of stream x Read Factor. Increasing this multiple, cache fills faster. Large multiples may cause CPU spikes on some devices, saturate the connection and worsen performance.[CR][Adaptive] Uses dynamically calculated Read Factor based on cache level."
-msgstr ""
+msgstr "根据流的平均比特率乘以读取因子确定缓存填充率。增加这个倍数，缓存填充速度会更快。较大的倍数可能会导致某些设备上的CPU负载过大，造成连接饱和并降低性能。[CR][Adaptive]自动基于缓存级别动态计算读取因子。"
 
 #. Description of setting "Chunk Size"
 msgctxt "#37109"
 msgid "The data chunk size to use when a filesystem or protocol does not force the value, e.g. NFS will override this with its own value."
-msgstr ""
+msgstr "当文件系统或协议不强制该值时使用的数据块大小，例如NFS将用其自己的值覆盖该值。"
 
 #. Value of setting - NONE
 msgctxt "#37110"
 msgid "No buffer"
-msgstr ""
+msgstr "禁用缓存"
 
 #. Value of setting - TRUE INTERNET
 msgctxt "#37111"
 msgid "Only buffer true internet streams: HTTP, HTTPS, etc."
-msgstr ""
+msgstr "仅缓冲真正的互联网流媒体：来自HTTP、HTTPS等网站的数据流。"
 
 #. Value of setting - INTERNET
 msgctxt "#37112"
 msgid "Buffer all internet filesystems, including: FTP, WebDAV, etc."
-msgstr ""
+msgstr "缓冲所有互联网文件系统，包括：FTP、WebDAV等。"
 
 #. Value of setting - NETWORK
 msgctxt "#37113"
 msgid "Buffer all network filesystems, including: SMB, NFS, etc."
-msgstr ""
+msgstr "缓冲所有网络文件系统，包括：SMB、NFS等。"
 
 #. Value of setting - ALL
 msgctxt "#37114"
 msgid "Buffer all filesystems, including local files"
-msgstr ""
+msgstr "缓冲所有文件系统，包括本地文件。"
 
 #. Value of setting #37105 "Memory Size"
 msgctxt "#37115"
 msgid "Caches entire file on disk storage"
-msgstr ""
+msgstr "将整个文件缓存在磁盘上."
 
 #. Value of setting #37107 "Read Factor"
 msgctxt "#37116"
 msgid "Adaptive"
-msgstr ""
+msgstr "自适应"
 
 # empty strings from id 37116 to 37119
 #. Value of setting - Byte
@@ -18349,31 +18310,16 @@ msgctxt "#37123"
 msgid "{0:d} GB"
 msgstr ""
 
-#: system/settings/settings.xml
-msgctxt "#38007"
-msgid "Boost centre channel when downmixing"
-msgstr "在混音时增强中央声道"
-
-#: system/settings/settings.xml
-msgctxt "#38008"
-msgid "Increase this value to make the dialogue louder compared to background sounds when downmixing multichannel audio"
-msgstr "提高此值可在多声道音频混音时，使对话声相较于背景声音更响亮"
-
-#: system/settings/settings.xml
-msgctxt "#38009"
-msgid "{0} dB"
-msgstr "{0} dB"
-
 # empty strings from id 37124 to 37127
 #. Value of setting - second
 msgctxt "#37128"
 msgid "{0:d} second"
-msgstr ""
+msgstr "秒"
 
 #. Value of setting - seconds
 msgctxt "#37129"
 msgid "{0:d} seconds"
-msgstr ""
+msgstr "秒"
 
 #. Setting "Audio/video queue time"
 msgctxt "#37130"
@@ -18394,6 +18340,16 @@ msgstr ""
 msgctxt "#37133"
 msgid "Limits the maximum memory usage for the video queue. The amount of memory used depends on the video bitrate and the length of the queue. If the memory limit is reached, the queue time is reduced as necessary."
 msgstr ""
+
+#: system/settings/settings.xml
+msgctxt "#38007"
+msgid "Boost centre channel when downmixing"
+msgstr "混音时增强中置声道"
+
+#: system/settings/settings.xml
+msgctxt "#38008"
+msgid "Increase this value to make the dialogue louder compared to background sounds when downmixing multichannel audio"
+msgstr "当对多声道音频进行缩音时，增加此值可使影片对白比背景声音更响亮"
 
 #. Setting #38011 "Show All Items entry"
 msgctxt "#38011"
@@ -19493,7 +19449,7 @@ msgstr "播放音乐时，不会激活屏幕保护程序"
 
 #. Help text of setting "Allow use DXVA Video Super Resolution" with label #13417
 msgctxt "#39194"
-msgid "Enables advanced DXVA upscaler using NVIDIA \"RTX Video Super Resolution\" or \"Intel Video Super Resolution\".[CR]Used when the video source is 2560x1440 or less and the source resolution is lower than the display resolution.[CR]Only available on specific hardware: NVIDIA RTX and Intel Arc."
+msgid "Enables advanced DXVA upscaler using NVIDIA \"RTX Video Super Resolution\" or \"Intel Video Super Resolution\".[CR]Used when the video source is 1920x1080 or less and the source resolution is lower than the display resolution.[CR]Only available on specific hardware: NVIDIA RTX 20xx, 30xx, 40xx and above, Intel Arc A770, A750."
 msgstr ""
 
 #. Description of setting with label #13418 "Use high precision processing"
@@ -19502,21 +19458,19 @@ msgid "Enable this option for the best picture quality. Disabling reduces the lo
 msgstr ""
 
 #. Title of Dolby Vision RPU conversion setting
-#: system/settings/settings.xml
 msgctxt "#39196"
 msgid "Convert profile 7"
-msgstr "转换Profile 7"
+msgstr "针对 杜比视界P7"
 
 #. Help text for setting "Convert Dolby Vision for compatibility" of label #39196
-#: system/settings/settings.xml
 msgctxt "#39197"
 msgid "Convert Dolby Vision profile 7 to profile 7 MEL or profile 8.1"
-msgstr "将Dolby Vision  Profile 7转换为Profile 7 MEL或Profile 8.1"
+msgstr "启用后，P7版本杜比视界将转换为大部分播放器支持的P8.1版。 如果您的设备支援杜比视界，但某些影片有问题，请启用。"
 
 #. Title of "Allowed HDR dynamic metadata formats" setting
 msgctxt "#39198"
 msgid "Allowed HDR dynamic metadata formats"
-msgstr ""
+msgstr "已允许的HDR动态元数据格式"
 
 #. Help text for setting "Allowed HDR dynamic metadata formats" of label #39198
 msgctxt "#39199"
@@ -19553,540 +19507,11 @@ msgctxt "#39205"
 msgid "By enabling it, CC subtitles will be labeled for the hearing impaired; this will affect the automatic selection of subtitles, which unless otherwise specified will not be displayed by default."
 msgstr ""
 
-#. Abbreviation for Closed Caption subtitles (subtitles embedded in videos)
-msgctxt "#39206"
-msgid "CC"
-msgstr ""
-
-#. Dolby Vision RPU Conversion
-#: system/settings/settings.xml
-msgctxt "#39300"
-msgid "off"
-msgstr "关闭"
-
-#. Dolby Vision RPU Conversion
-#: system/settings/settings.xml
-msgctxt "#39301"
-msgid "to MEL"
-msgstr "转换为MEL"
-
-#. Dolby Vision RPU Conversion
-#: system/settings/settings.xml
-msgctxt "#39302"
-msgid "to profile 8.1"
-msgstr "转换为Profile 8.1"
-
 # 40000 to 40800 are reserved for Video Versions feature
 #. Generic video versions label (plural)
 msgctxt "#40000"
 msgid "Versions"
 msgstr "版本"
-
-#. "杜比视界"
-#: system/settings/settings.xml
-msgctxt "#50001"
-msgid "Dolby Vision"
-msgstr "杜比视界"
-
-#. "杜比视界"
-#: system/settings/settings.xml
-msgctxt "#50011"
-msgid "Mode"
-msgstr "模式"
-
-#. "杜比视界"
-#: system/settings/settings.xml
-msgctxt "#50012"
-msgid "Switch On Dolby Vision always, On demand or switch Off"
-msgstr "设定杜比视界为始终开启、按需开启或关闭"
-
-#. "杜比视界"
-#: system/settings/settings.xml
-msgctxt "#50013"
-msgid "On"
-msgstr "开启"
-
-#. "杜比视界"
-#: system/settings/settings.xml
-msgctxt "#50014"
-msgid "On demand"
-msgstr "开启自适应"
-
-#. "杜比视界"
-#: system/settings/settings.xml
-msgctxt "#50015"
-msgid "Off"
-msgstr "关闭"
-
-#. "杜比视界"
-#: system/settings/settings.xml
-msgctxt "#50016"
-msgid "GUI max luminance in menus"
-msgstr "界面选单的最大亮度"
-
-#. "杜比视界"
-#: system/settings/settings.xml
-msgctxt "#50017"
-msgid "Set the maximum luminance for the GUI menus in cd/m^2"
-msgstr "设定界面选单的最大亮度（cd/m^2）"
-
-#. "杜比视界类型"
-#: system/settings/settings.xml
-msgctxt "#50021"
-msgid "Type"
-msgstr "类型"
-
-#. "杜比视界类型"
-#: system/settings/settings.xml
-msgctxt "#50022"
-msgid "Type of Dolby Vision to use with display."
-msgstr "选择用于显示器的杜比视界类型。"
-
-#. "杜比视界类型"
-#: system/settings/settings.xml
-msgctxt "#50023"
-msgid "Display Led (DV-Std)"
-msgstr "显示器主导（DV-Std）"
-
-#. "杜比视界类型"
-#: system/settings/settings.xml
-msgctxt "#50024"
-msgid "Player Led (DV-LL)"
-msgstr "播放器主导（DV-LL）"
-
-#. "杜比视界类型"
-#: system/settings/settings.xml
-msgctxt "#50025"
-msgid "Player Led (HDR)"
-msgstr "播放器主导（HDR）"
-
-#. "杜比视界类型"
-#: system/settings/settings.xml
-msgctxt "#50026"
-msgid "VS10 Only"
-msgstr "仅使用 VS10"
-
-#. "杜比视界 VSVDB"
-#: system/settings/settings.xml
-msgctxt "#50031"
-msgid "Dolby VSVDB"
-msgstr "杜比 VSVDB"
-
-#. "杜比视界 VSVDB"
-#: system/settings/settings.xml
-msgctxt "#50032"
-msgid "Dolby VSVDB inject or replace existing Dolby VSVDB from EDID with VSVDB specified in the Dolby VSVDB Payload."
-msgstr "杜比 VSVDB 可注入或替换 EDID 中现有的杜比 VSVDB，使用在杜比 VSVDB 资料中指定的 VSVDB。"
-
-#. "杜比视界 VSVDB"
-#: system/settings/settings.xml
-msgctxt "#50033"
-msgid "Payload"
-msgstr "资料"
-
-#. "杜比视界 VSVDB"
-#: system/settings/settings.xml
-msgctxt "#50034"
-msgid "Dolby VSVDB Payload. A v1 or v2, 14 character basic hex string for example: 2A3801515999AA"
-msgstr "杜比 VSVDB 资料：一个 v1 或 v2 的 14 字元基本十六进位字串，例如：2A3801515999AA"
-
-#. "杜比视界显示器主导色彩空间"
-#: system/settings/settings.xml
-msgctxt "#50041"
-msgid "Colorimetry"
-msgstr "色彩空间"
-
-#. "杜比视界显示器主导色彩空间"
-#: system/settings/settings.xml
-msgctxt "#50042"
-msgid "Colorimetry to be sent to the Display when using Display Led Dolby Vision."
-msgstr "在使用显示器主导杜比视界时，传送到显示器的色彩空间。"
-
-#. "杜比视界显示器主导色彩空间"
-#: system/settings/settings.xml
-msgctxt "#50043"
-msgid "as per AMLogic"
-msgstr "依 AMLogic 设定"
-
-#. "杜比视界显示器主导色彩空间"
-#: system/settings/settings.xml
-msgctxt "#50044"
-msgid "BT.2020nc"
-msgstr "BT.2020nc"
-
-#. "杜比视界显示器主导色彩空间"
-#: system/settings/settings.xml
-msgctxt "#50045"
-msgid "disable/remove"
-msgstr "停用/移除"
-
-#. "杜比视界 VS10"
-#: system/settings/settings.xml
-msgctxt "#50051"
-msgid "For SDR8"
-msgstr "针对 SDR8"
-
-#. "杜比视界 VS10"
-#: system/settings/settings.xml
-msgctxt "#50052"
-msgid "Dolby Vision VS10 target mode for SDR8 content."
-msgstr "针对 SDR8 内容的杜比视界 VS10 目标模式。"
-
-#. "杜比视界 VS10"
-#: system/settings/settings.xml
-msgctxt "#50053"
-msgid "For SDR10"
-msgstr "针对 SDR10"
-
-#. "杜比视界 VS10"
-#: system/settings/settings.xml
-msgctxt "#50054"
-msgid "Dolby Vision VS10 target mode for SDR10 content."
-msgstr "针对 SDR10 内容的杜比视界 VS10 目标模式。"
-
-#. "杜比视界 VS10"
-#: system/settings/settings.xml
-msgctxt "#50055"
-msgid "For HDR10"
-msgstr "针对 HDR10"
-
-#. "杜比视界 VS10"
-#: system/settings/settings.xml
-msgctxt "#50056"
-msgid "Dolby Vision VS10 target mode for HDR10 content."
-msgstr "针对 HDR10 内容的杜比视界 VS10 目标模式。"
-
-#. "杜比视界 VS10"
-#: system/settings/settings.xml
-msgctxt "#50057"
-msgid "For HDR10+ (HDR10 data only)"
-msgstr "针对 HDR10+（仅限 HDR10 资料）"
-
-#. "杜比视界 VS10"
-#: system/settings/settings.xml
-msgctxt "#50058"
-msgid "Dolby Vision VS10 target mode for HDR10+ content (does not use the HDR10+ dynamic metadata)."
-msgstr "针对 HDR10+ 内容的杜比视界 VS10 目标模式（不使用 HDR10+ 动态元数据）。"
-
-#. "杜比视界 VS10"
-#: system/settings/settings.xml
-msgctxt "#50059"
-msgid "For HLG HDR"
-msgstr "针对 HLG HDR"
-
-#. "杜比视界 VS10"
-#: system/settings/settings.xml
-msgctxt "#50060"
-msgid "Dolby Vision VS10 target mode for HLG HDR content (processed by VS10 as SDR)."
-msgstr "针对 HLG HDR 内容的杜比视界 VS10 目标模式（由 VS10 处理为 SDR）。"
-
-#. "杜比视界 VS10"
-#: system/settings/settings.xml
-msgctxt "#50061"
-msgid "For Dolby Vision"
-msgstr "针对 Dolby Vision"
-
-#. "杜比视界 VS10"
-#: system/settings/settings.xml
-msgctxt "#50062"
-msgid "Dolby Vision VS10 target mode for Dolby Vision."
-msgstr "针对Dolby Vision内容的Dolby Vision VS10 目标模式。"
-
-#. "杜比视界 VS10"
-#: system/settings/settings.xml
-msgctxt "#50063"
-msgid "off"
-msgstr "关闭"
-
-#. "杜比视界 VS10"
-#: system/settings/settings.xml
-msgctxt "#50064"
-msgid "SDR"
-msgstr "SDR"
-
-#. "杜比视界 VS10" 
-#: system/settings/settings.xml
-msgctxt "#50065"
-msgid "HDR10"
-msgstr "HDR10"
-
-#. "杜比视界 VS10" 
-#: system/settings/settings.xml
-msgctxt "#50066"
-msgid "Dolby Vision"
-msgstr "Dolby Vision"
-
-#. "杜比视界 VS10" 
-#: system/settings/settings.xml
-msgctxt "#50071"
-msgid "Colour space"
-msgstr "色彩空间"
-
-#. "杜比视界 VS10" 
-#: system/settings/settings.xml
-msgctxt "#50072"
-msgid "Dolby VSVDB Payload colour space"
-msgstr "杜比 VSVDB 资料的色彩空间"
-
-#. "杜比视界 VS10" 
-#: system/settings/settings.xml
-msgctxt "#50073"
-msgid "Minimum luminance"
-msgstr "最低亮度"
-
-#. "杜比视界 VS10" 
-#: system/settings/settings.xml
-msgctxt "#50074"
-msgid "Dolby VSVDB Payload minimum luminance in PQ (cd/m^2)"
-msgstr "杜比 VSVDB 资料的最低亮度（PQ，单位：cd/m^2）"
-
-#. "杜比视界 VS10" 
-#: system/settings/settings.xml
-msgctxt "#50075"
-msgid "Maximum luminance"
-msgstr "最大亮度"
-
-#. "杜比视界 VS10" 
-#: system/settings/settings.xml
-msgctxt "#50076"
-msgid "Dolby VSVDB Payload maximum luminance in PQ (cd/m^2)"
-msgstr "杜比 VSVDB 资料的最大亮度（PQ，单位：cd/m^2）"
-
-#. "杜比视界 VS10" 
-#: system/settings/settings.xml
-msgctxt "#50081"
-msgid "DCI-P3"
-msgstr "DCI-P3"
-
-#. "杜比视界 VS10" 
-#: system/settings/settings.xml
-msgctxt "#50082"
-msgid "BT.2020"
-msgstr "BT.2020"
-
-#. "杜比视界 VS10" 
-#: system/settings/settings.xml
-msgctxt "#50083"
-msgid "BT.709"
-msgstr "BT.709"
-
-#. "杜比视界 HDR 信息框架"
-#: system/settings/settings.xml
-msgctxt "#50091"
-msgid "HDR InfoFrame"
-msgstr "HDR 信息框架"
-
-#. "杜比视界 HDR 信息框架"
-#: system/settings/settings.xml
-msgctxt "#50092"
-msgid "HDR InfoFrame Inject, change the HDR InfoFrame according to the Payload when using Player Led (HDR)."
-msgstr "HDR 信息框架注入，在使用播放器主导（HDR）时，根据资料更改 HDR 信息框架。"
-
-#. "杜比视界 HDR 信息框架"
-#: system/settings/settings.xml
-msgctxt "#50093"
-msgid "Payload"
-msgstr "资料"
-
-#. "杜比视界 HDR 信息框架"
-#: system/settings/settings.xml
-msgctxt "#50094"
-msgid "HDR InfoFrame Payload. A 48 character basic hex string to specify colour primaries, white point, luminance and content light level."
-msgstr "HDR 信息框架资料：一个 48 字元的基本十六进位字串，用于指定色彩原色、白点、亮度和内容光照水平。"
-
-#. "Dolby Vision HDR10+"
-#: system/settings/settings.xml
-msgctxt "#50101"
-msgid "Dynamic HDR10+ to Dolby Vision profile 8.1 conversion"
-msgstr "动态HDR10+ 转换为Dolby Vision Profile 8.1"
-
-#. "Dolby Vision HDR10+"
-#: system/settings/settings.xml
-msgctxt "#50102"
-msgid "Dynamically convert HDR10+ to Dolby Vision profile 8.1 on playback. (port from dovi_tool Aug. 2024)"
-msgstr "在播放时动态将 HDR10+ 转换为杜比视界Profile 8.1。（来自 dovi_tool 的移植，2024 年 8 月）"
-
-#. "Dolby Vision HDR10+"
-#: system/settings/settings.xml
-msgctxt "#50103"
-msgid "Peak Brightness Source"
-msgstr "峰值亮度来源"
-
-#. "杜比视界 HDR10+"
-#: system/settings/settings.xml
-msgctxt "#50104"
-msgid "Source for Peak Brightness when converting from HDR10+ to Dolby Vision Profile 8.1. (port from dovi_tool Aug. 2024)"
-msgstr "从HDR10+转换到Dolby Vision Profile 8.1时的峰值亮度源。（来自 dovi_tool 的移植，2024 年 8 月）"
-
-#. "杜比视界 HDR10+"
-#: system/settings/settings.xml
-msgctxt "#50105"
-msgid "histogram"
-msgstr "直方图"
-
-#. "杜比视界 HDR10+"
-#: system/settings/settings.xml
-msgctxt "#50106"
-msgid "histogram99"
-msgstr "直方图99"
-
-#. "杜比视界 HDR10+"
-#: system/settings/settings.xml
-msgctxt "#50107"
-msgid "max-scl"
-msgstr "最大 SCL"
-
-#. "杜比视界 HDR10+"
-#: system/settings/settings.xml
-msgctxt "#50108"
-msgid "max-scl-luminance"
-msgstr "最大 SCL 亮度"
-
-#. "杜比视界 HDR10+"
-#: system/settings/settings.xml
-msgctxt "#50109"
-msgid "histogram-plus"
-msgstr "直方图加强"
-
-#. "杜比视界 HDR10+"
-#: system/settings/settings.xml
-msgctxt "#50121"
-msgid "Prefer conversion over original Dolby Vision"
-msgstr "优先转换而非原生杜比视界"
-
-#: system/settings/settings.xml
-msgctxt "#50122"
-msgid "When Dolby Vision and HDR10+ are both present, prefer conversion from HDR10+ over using the original Dolby Vision, note any FEL will be discarded in this case."
-msgstr "当 Dolby Vision 和 HDR10+ 同时存在时，偏好从 HDR10+ 转换，而不是使用原始的 Dolby Vision，注意在此情况下任何 FEL 将被丢弃。"
-
-#. "Dolby Vision HDR10+"
-#: system/settings/settings.xml
-msgctxt "#50131"
-msgid "Preferred HDR for dual Dolby Vision and HDR10+ content"
-msgstr "双层 Dolby Vision 和 HDR10+ 共存的影片时优先使用模式"
-
-#: system/settings/settings.xml
-msgctxt "#50132"
-msgid "When Dolby Vision and HDR10+ are both present, which HDR to prefer."
-msgstr "当 Dolby Vision 和 HDR10+ 同时存在时，应偏好哪一种 HDR显示引擎。"
-
-#: system/settings/settings.xml
-msgctxt "#50133"
-msgid "Dolby Vision"
-msgstr "Dolby Vision"
-
-#: system/settings/settings.xml
-msgctxt "#50134"
-msgid "HDR10+"
-msgstr "HDR10+"
-
-#. "Dolby Vision Display Led Source Levels Metadata"
-#: system/settings/settings.xml
-msgctxt "#50150"
-msgid "Source levels metadata"
-msgstr "源级别元数据"
-
-#. "Dolby Vision Display Led Source Levels Metadata"
-#: system/settings/settings.xml
-msgctxt "#50151"
-msgid "When using Display Led (DV-Std), send the source's levels Metadata, otherwise send then Dolby Vision engines altered levels metadata to the display."
-msgstr "使用Display Led（DV Std）时，发送源的级别元数据，否则将Dolby Vision引擎更改的级别元数据发送到显示器。"
-
-#. "Dolby Vision Display Led Level 5 Handling"
-#: system/settings/settings.xml
-msgctxt "#50160"
-msgid "Level 5"
-msgstr "5级"
-
-#. "Dolby Vision Display Led Level 5 Handling"
-#: system/settings/settings.xml
-msgctxt "#50161"
-msgid "When using Display Led (DV-Std) and sending the source's level 5 metadata to the diplay, choose how to handle the metadata."
-msgstr "使用Display Led（DV Std）并将源的5级元数据发送到diploy时，选择如何处理元数据。"
-
-#. "Dolby Vision Display Led Level 5 Handling"
-#: system/settings/settings.xml
-msgctxt "#50170"
-msgid "Discard"
-msgstr "丢弃"
-
-#. "Dolby Vision Display Led Level 5 Handling"
-#: system/settings/settings.xml
-msgctxt "#50171"
-msgid "Source"
-msgstr "源"
-
-#. "Dolby Vision Display Led Level 5 Handling"
-#: system/settings/settings.xml
-msgctxt "#50172"
-msgid "0 (zero)"
-msgstr "0 (零)"
-
-#. "Dolby Vision Display Led Level 5 Handling"
-#: system/settings/settings.xml
-msgctxt "#50173"
-msgid "Source, 0 (zero) when OSD is active or subtiles set on"
-msgstr "源，当OSD处于活动状态或子文件设置为打开时为0（零）"
-
-#. "Dolby Vision Display Led Level 5 Handling"
-#: system/settings/settings.xml
-msgctxt "#50174"
-msgid "Source, 0 (zero) when OSD is active"
-msgstr "源，OSD激活时为0（零）"
-
-#. "Dolby Vision Display Led Level 6 Handling"
-#: system/settings/settings.xml
-msgctxt "#50180"
-msgid "Level 6"
-msgstr "6级"
-
-#. "Dolby Vision Display Led Level 6 Handling"
-#: system/settings/settings.xml
-msgctxt "#50181"
-msgid "When using Display Led (DV-Std) and sending the source's level 6 metadata to the diplay, choose how to handle the metadata."
-msgstr "使用Display Led（DV Std）并将源的6级元数据发送到diploy时，选择如何处理元数据。"
-
-#. "Dolby Vision Display Led Restrict Overlays"
-#: system/settings/settings.xml
-msgctxt "#50190"
-msgid "Restrict overlays"
-msgstr "限制覆盖"
-
-#. "Dolby Vision Display Led Restrict Overlays"
-#: system/settings/settings.xml
-msgctxt "#50191"
-msgid "When using Display Led (DV-Std) should overlays be restricted to the active area only."
-msgstr "使用Led显示屏（DV Std）时，应将覆盖物仅限于活动区域。"
-
-#. "Dolby Vision Display LL Dolby VSVDB Limit"
-#: system/settings/settings.xml
-msgctxt "#50200"
-msgid "Limit VSVDB luminance"
-msgstr "限制VSVDB亮度"
-
-#. "Dolby Vision Display LL Dolby VSVDB Limit"
-#: system/settings/settings.xml
-msgctxt "#50201"
-msgid "When using Player Led (DV-LL / HDR) limit the VSVDB min / max luminance to match the source being played."
-msgstr "使用播放器Led（DV-LL/HDR）时，限制VSVDB最小/最大亮度以匹配正在播放的源。"
-
-#. "Dolby Vision Display LL Dolby VSVDB Limit"
-#: system/settings/settings.xml
-msgctxt "#50202"
-msgid "Do not limit"
-msgstr "不作限制"
-
-#. "Dolby Vision Display LL Dolby VSVDB Limit"
-#: system/settings/settings.xml
-msgctxt "#50203"
-msgid "Limit min and max"
-msgstr "限制最小值和最大值"
-
-#. "Dolby Vision Display LL Dolby VSVDB Limit"
-#: system/settings/settings.xml
-msgctxt "#50204"
-msgid "Limit max only"
-msgstr "仅限最大值"
 
 #. Manage video versions context menu item
 msgctxt "#40001"
@@ -20126,7 +19551,7 @@ msgstr ""
 #. Different video version found dialog title
 msgctxt "#40008"
 msgid "Different movie version found"
-msgstr ""
+msgstr "发现不同的电影版本"
 
 #. Different video version found dialog text
 msgctxt "#40009"
@@ -20283,30 +19708,54 @@ msgctxt "#40040"
 msgid "Are you sure to remove the extra \"{0:s}\"?"
 msgstr ""
 
+#. Select default video version setting
+msgctxt "#40200"
+msgid "Select default video version"
+msgstr "选择默认视频版本"
+
+#. Help for select default video version setting
+msgctxt "#40201"
+msgid "Defines how to handle selection of videos with multiple versions.[CR][Enabled] Automatically select the default video version without prompting.[CR][Disabled] Display a dialogue to select a version of the video."
+msgstr "定义如何处理多个版本的视频选择。[CR][启用]自动选择默认视频版本，无需提示。[CR][禁用]显示一个对话框以选择视频的版本。"
+
 #. Ignore different video versions settting
 msgctxt "#40202"
 msgid "Ignore different video versions on scan"
-msgstr ""
+msgstr "扫描时忽略不同的视频版本"
 
 #. Help for Ignore different video versions settting
 msgctxt "#40203"
 msgid "Select scanner action for different video versions.[CR][Enabled] Add different video versions to library seperately without confirmation.[CR][Disabled] Prompt for converting different video versions into additional versions of the original."
-msgstr ""
+msgstr "为不同的视频版本选择扫描操作。[CR][启用]无需确认即可将不同的视频版本单独添加到库中。[CR][禁用]提示将不同的视频版本转换为原始版本的附加版本。"
 
 #. Ignore video extras settting
 msgctxt "#40204"
 msgid "Ignore video extras on scan"
-msgstr ""
+msgstr "扫描时忽略extras文件夹的视频"
 
 #. Help for ignore video extras settting
 msgctxt "#40205"
 msgid "Select scanner action for video extras in \"extras\" folder.[CR][Enabled] Scan video extras like regular videos.[CR][Disabled] Add video extras to library for associated video."
+msgstr "扫描时在“extras”文件夹中为视频附加内容选择操作。[CR][已启用]将附加视频作为常规视频进行扫描。[CR][禁用]将附加视频添加到库中作为原视频附加内容。"
+
+#. Show video versions as folder settting
+msgctxt "#40206"
+msgid "Show videos with multiple versions as folder"
+msgstr "将具有多个版本的视频显示为文件夹"
+
+#. Help for show video versions as folder settting
+msgctxt "#40207"
+msgid "When enabled, a video with multiple versions will be shown as a folder in the video library. This folder can then be opened to display the individual video versions. When disabled, the configured select action will be applied."
+msgstr "启用后，具有多个版本的视频将在视频库中显示为一个文件夹。您可以打开此文件夹来显示各个视频版本。禁用后，将应用已配置的选择操作。"
+
+#. Choose video version dialog title
+msgctxt "#40208"
+msgid "Choose version: {}"
 msgstr ""
 
-# empty strings from id 40206 to 40208
-#. Button label for video assets
+#. First choose video version and then select a player and play context menu item label
 msgctxt "#40209"
-msgid "Assets"
+msgid "Play version using..."
 msgstr ""
 
 #. Button label for video versions
@@ -20322,11 +19771,16 @@ msgstr ""
 #. UPnP remote player volume level sync setting
 msgctxt "#40212"
 msgid "Synchronize volume level to remote UPnP players"
-msgstr ""
+msgstr "将音量同步到远程UPnP播放器"
 
 #. Help string for UPnP remote player volume level sync setting
 msgctxt "#40213"
 msgid "If selected the remote player volume level will be synchronized with the volume of this application.[CR]Warning: Global system volume level may be different than the application volume level - they are controlled independently.[CR]This may lead the remote player to be set to 100% volume level if the application has 100% volume level but the overall system volume level is smaller."
+msgstr ""
+
+#. Dialog title for the selection of the video extra
+msgctxt "#40214"
+msgid "Choose extra: {}"
 msgstr ""
 
 #. Title of the dialog for version rename action from Versions Manager
@@ -20357,6 +19811,11 @@ msgstr ""
 #. Caption of the dialog for keyboard entry of a new extra name
 msgctxt "#40220"
 msgid "New extra name"
+msgstr ""
+
+#. Choose video version context menu item label
+msgctxt "#40221"
+msgid "Choose version"
 msgstr ""
 
 # Video versions
@@ -20486,15 +19945,6 @@ msgctxt "#40802"
 msgid "If enabled, a confirmation dialog will be displayed when files shall be deleted. If disabled, files will be deleted without user confirmation."
 msgstr ""
 
-#~ msgctxt "#12015"
-#~ msgid "Select video version"
-#~ msgstr "选择视频版本"
-
-#, fuzzy
-#~ msgctxt "#12016"
-#~ msgid "Select video extra"
-#~ msgstr "选择额外视频"
-
 #~ msgctxt "#36629"
 #~ msgid "Set the minimum SMB protocol version to negotiate when making connections. Forcing SMBv2 may be required to prevent SMBv1 use on some OS."
 #~ msgstr "设置连接协商使用的最低 SMB 协议版本。可能需要强制 SMBv2 以阻止某些操作系统使用 SMBv1。"
@@ -20575,21 +20025,21 @@ msgstr ""
 #~ msgid "When the speed change exceeds this threshold, a pitch-correction filter will be applied. This avoids the \"chipmonk voices\" that normally result from speeding up a video"
 #~ msgstr "当速度变化超过该阈值，将使用音高修正滤波，以避免视频加速引起的噪音"
 
-#~ msgctxt "#14079"
-#~ msgid "Timezone country"
-#~ msgstr "时区国家"
+msgctxt "#14079"
+msgid "Timezone country"
+msgstr "时区国家"
 
-#~ msgctxt "#14080"
-#~ msgid "Timezone"
-#~ msgstr "时区"
+msgctxt "#14080"
+msgid "Timezone"
+msgstr "时区"
 
-#~ msgctxt "#36117"
-#~ msgid "Select country location."
-#~ msgstr "选择所在国家。"
+msgctxt "#36117"
+msgid "Select country location."
+msgstr "选择所在国家。"
 
-#~ msgctxt "#36118"
-#~ msgid "Select your current timezone."
-#~ msgstr "选择当前时区。"
+msgctxt "#36118"
+msgid "Select your current timezone."
+msgstr "选择当前时区。"
 
 #~ msgctxt "#40427"
 #~ msgid "DVD"
@@ -20923,3 +20373,517 @@ msgstr ""
 #~ msgctxt "#24163"
 #~ msgid "Match Apple tvOS Standard (Siri remote)"
 #~ msgstr "匹配 Apple tvOS 标准（Siri 遥控器）"
+
+#. "杜比视界"
+#: system/settings/settings.xml
+msgctxt "#50001"
+msgid "Dolby Vision"
+msgstr "杜比视界"
+
+#. "杜比视界"
+#: system/settings/settings.xml
+msgctxt "#50011"
+msgid "Mode"
+msgstr "模式"
+
+#. "杜比视界"
+#: system/settings/settings.xml
+msgctxt "#50012"
+msgid "Switch On Dolby Vision always, On demand or switch Off"
+msgstr "设置杜比视界为始终开启、自动或关闭"
+
+#. "杜比视界"
+#: system/settings/settings.xml
+msgctxt "#50013"
+msgid "On"
+msgstr "强制开启(容易偏色)"
+
+#. "杜比视界"
+#: system/settings/settings.xml
+msgctxt "#50014"
+msgid "On demand"
+msgstr "自动(默认选项)"
+
+#. "杜比视界"
+#: system/settings/settings.xml
+msgctxt "#50015"
+msgid "Off"
+msgstr "关闭"
+
+#. "杜比视界"
+#: system/settings/settings.xml
+msgctxt "#50016"
+msgid "GUI max luminance in menus"
+msgstr "界面选单的最大亮度"
+
+#. "杜比视界"
+#: system/settings/settings.xml
+msgctxt "#50017"
+msgid "Set the maximum luminance for the GUI menus in cd/m^2"
+msgstr "设置界面选单的最大亮度（cd/m^2）"
+
+#. "杜比视界类型"
+#: system/settings/settings.xml
+msgctxt "#50021"
+msgid "Type"
+msgstr "类型"
+
+#. "杜比视界类型"
+#: system/settings/settings.xml
+msgctxt "#50022"
+msgid "Type of Dolby Vision to use with display."
+msgstr "选择杜比视界实现类型。"
+
+#. "杜比视界类型"
+#: system/settings/settings.xml
+msgctxt "#50023"
+msgid "Display Led (DV-Std)"
+msgstr "显示器主导（DV-Std）"
+
+#. "杜比视界类型"
+#: system/settings/settings.xml
+msgctxt "#50024"
+msgid "Player Led (DV-LL)"
+msgstr "播放器主导（DV-LL）"
+
+#. "杜比视界类型"
+#: system/settings/settings.xml
+msgctxt "#50025"
+msgid "Player Led (HDR)"
+msgstr "播放器主导（HDR）"
+
+#. "杜比视界类型"
+#: system/settings/settings.xml
+msgctxt "#50026"
+msgid "VS10 Only"
+msgstr "仅使用 VS10"
+
+#. "杜比视界 VSVDB"
+#: system/settings/settings.xml
+msgctxt "#50031"
+msgid "Dolby VSVDB"
+msgstr "杜比 VSVDB"
+
+#. "杜比视界 VSVDB"
+#: system/settings/settings.xml
+msgctxt "#50032"
+msgid "Dolby VSVDB inject or replace existing Dolby VSVDB from EDID with VSVDB specified in the Dolby VSVDB Payload."
+msgstr "杜比VSVDB可注入或替换EDID中现有的杜比VSVDB，使用在杜比VSVDB资料中指定的VSVDB。"
+
+#. "杜比视界 VSVDB"
+#: system/settings/settings.xml
+msgctxt "#50033"
+msgid "Payload"
+msgstr "EDID代码"
+
+#. "杜比视界 VSVDB"
+#: system/settings/settings.xml
+msgctxt "#50034"
+msgid "Dolby VSVDB Payload. A v1 or v2, 14 character basic hex string for example: 2A3801515999AA"
+msgstr "EDID代码：一个v1或v2的14字符基本十六进位字符串，例如：2A3801515999AA"
+
+#. "杜比视界显示器主导色彩空间"
+#: system/settings/settings.xml
+msgctxt "#50041"
+msgid "Colorimetry"
+msgstr "色彩空间"
+
+#. "杜比视界显示器主导色彩空间"
+#: system/settings/settings.xml
+msgctxt "#50042"
+msgid "Colorimetry to be sent to the Display when using Display Led Dolby Vision."
+msgstr "在使用电视主导杜比视界时，传送到电视的色彩空间。"
+
+#. "杜比视界显示器主导色彩空间"
+#: system/settings/settings.xml
+msgctxt "#50043"
+msgid "as per AMLogic"
+msgstr "依 AMLogic 设置"
+
+#. "杜比视界显示器主导色彩空间"
+#: system/settings/settings.xml
+msgctxt "#50044"
+msgid "BT.2020nc"
+msgstr "BT.2020nc"
+
+#. "杜比视界显示器主导色彩空间"
+#: system/settings/settings.xml
+msgctxt "#50045"
+msgid "disable/remove"
+msgstr "停用/移除"
+
+#. "杜比视界 VS10"
+#: system/settings/settings.xml
+msgctxt "#50051"
+msgid "For SDR8"
+msgstr "针对 SDR8"
+
+#. "杜比视界 VS10"
+#: system/settings/settings.xml
+msgctxt "#50052"
+msgid "Dolby Vision VS10 target mode for SDR8 content."
+msgstr "针对 SDR8 内容的杜比视界 VS10 目标模式。"
+
+#. "杜比视界 VS10"
+#: system/settings/settings.xml
+msgctxt "#50053"
+msgid "For SDR10"
+msgstr "针对 SDR10"
+
+#. "杜比视界 VS10"
+#: system/settings/settings.xml
+msgctxt "#50054"
+msgid "Dolby Vision VS10 target mode for SDR10 content."
+msgstr "针对SDR10内容的杜比视界VS10目标模式。"
+
+#. "杜比视界 VS10"
+#: system/settings/settings.xml
+msgctxt "#50055"
+msgid "For HDR10"
+msgstr "针对 HDR10"
+
+#. "杜比视界 VS10"
+#: system/settings/settings.xml
+msgctxt "#50056"
+msgid "Dolby Vision VS10 target mode for HDR10 content."
+msgstr "针对HDR10内容的杜比视界VS10目标模式。"
+
+#. "杜比视界 VS10"
+#: system/settings/settings.xml
+msgctxt "#50057"
+msgid "For HDR10+ (HDR10 data only)"
+msgstr "针对HDR10+(仅限HDR10资料）"
+
+#. "杜比视界 VS10"
+#: system/settings/settings.xml
+msgctxt "#50058"
+msgid "Dolby Vision VS10 target mode for HDR10+ content (does not use the HDR10+ dynamic metadata)."
+msgstr "针对HDR10+内容的杜比视界VS10目标模式（不使用 HDR10+ 动态元数据）。"
+
+#. "杜比视界 VS10"
+#: system/settings/settings.xml
+msgctxt "#50059"
+msgid "For HLG HDR"
+msgstr "针对 HLG HDR"
+
+#. "杜比视界 VS10"
+#: system/settings/settings.xml
+msgctxt "#50060"
+msgid "Dolby Vision VS10 target mode for HLG HDR content (processed by VS10 as SDR)."
+msgstr "针对HLG HDR内容的杜比视界VS10目标模式（由 VS10 处理为 SDR）。"
+
+#. "杜比视界 VS10"
+#: system/settings/settings.xml
+msgctxt "#50061"
+msgid "For Dolby Vision"
+msgstr "针对杜比视界"
+
+#. "杜比视界 VS10"
+#: system/settings/settings.xml
+msgctxt "#50062"
+msgid "Dolby Vision VS10 target mode for Dolby Vision."
+msgstr "针对杜比视界内容的杜比视界VS10目标模式。"
+
+#. "杜比视界 VS10"
+#: system/settings/settings.xml
+msgctxt "#50063"
+msgid "off"
+msgstr "关闭"
+
+#. "杜比视界 VS10"
+#: system/settings/settings.xml
+msgctxt "#50064"
+msgid "SDR"
+msgstr "SDR"
+
+#. "杜比视界 VS10" 
+#: system/settings/settings.xml
+msgctxt "#50065"
+msgid "HDR10"
+msgstr "HDR10"
+
+#. "杜比视界 VS10" 
+#: system/settings/settings.xml
+msgctxt "#50066"
+msgid "Dolby Vision"
+msgstr "Dolby Vision"
+
+#. "杜比视界 VS10" 
+#: system/settings/settings.xml
+msgctxt "#50071"
+msgid "Colour space"
+msgstr "色彩空间"
+
+#. "杜比视界 VS10" 
+#: system/settings/settings.xml
+msgctxt "#50072"
+msgid "Dolby VSVDB Payload colour space"
+msgstr "杜比VSVDB资料的色彩空间"
+
+#. "杜比视界 VS10" 
+#: system/settings/settings.xml
+msgctxt "#50073"
+msgid "Minimum luminance"
+msgstr "最低亮度"
+
+#. "杜比视界 VS10" 
+#: system/settings/settings.xml
+msgctxt "#50074"
+msgid "Dolby VSVDB Payload minimum luminance in PQ (cd/m^2)"
+msgstr "杜比VSVDB资料的最低亮度（PQ，单位：cd/m^2）"
+
+#. "杜比视界 VS10" 
+#: system/settings/settings.xml
+msgctxt "#50075"
+msgid "Maximum luminance"
+msgstr "最大亮度"
+
+#. "杜比视界 VS10" 
+#: system/settings/settings.xml
+msgctxt "#50076"
+msgid "Dolby VSVDB Payload maximum luminance in PQ (cd/m^2)"
+msgstr "杜比VSVDB资料的最大亮度（PQ，单位：cd/m^2）"
+
+#. "杜比视界 VS10" 
+#: system/settings/settings.xml
+msgctxt "#50081"
+msgid "DCI-P3"
+msgstr "DCI-P3"
+
+#. "杜比视界 VS10" 
+#: system/settings/settings.xml
+msgctxt "#50082"
+msgid "BT.2020"
+msgstr "BT.2020"
+
+#. "杜比视界 VS10" 
+#: system/settings/settings.xml
+msgctxt "#50083"
+msgid "BT.709"
+msgstr "BT.709"
+
+#. "杜比视界 HDR 信息框架"
+#: system/settings/settings.xml
+msgctxt "#50091"
+msgid "HDR InfoFrame"
+msgstr "HDR信息框架"
+
+#. "杜比视界 HDR 信息框架"
+#: system/settings/settings.xml
+msgctxt "#50092"
+msgid "HDR InfoFrame Inject, change the HDR InfoFrame according to the Payload when using Player Led (HDR)."
+msgstr "HDR信息框架注入，在使用播放器主导(HDR)时，根据资料更改HDR信息框架。"
+
+#. "杜比视界 HDR 信息框架"
+#: system/settings/settings.xml
+msgctxt "#50093"
+msgid "Payload"
+msgstr "资料"
+
+#. "杜比视界 HDR 信息框架"
+#: system/settings/settings.xml
+msgctxt "#50094"
+msgid "HDR InfoFrame Payload. A 48 character basic hex string to specify colour primaries, white point, luminance and content light level."
+msgstr "HDR信息框架资料：一个48字符的基本十六进位字符串，用于指定色彩原色、白点、亮度和内容光照水平。"
+
+#. "杜比视界 HDR10+"
+#: system/settings/settings.xml
+msgctxt "#50101"
+msgid "Dynamic HDR10+ to Dolby Vision profile 8.1 conversion"
+msgstr "动态将HDR10+转换为杜比视界P8.1"
+
+#. "杜比视界 HDR10+"
+#: system/settings/settings.xml
+msgctxt "#50102"
+msgid "Dynamically convert HDR10+ to Dolby Vision profile 8.1 on playback. (port from dovi_tool Aug. 2024)"
+msgstr "在播放时动态将HDR10+转换为杜比视界P8.1。"
+
+#. "杜比视界 HDR10+"
+#: system/settings/settings.xml
+msgctxt "#50103"
+msgid "Peak Brightness Source"
+msgstr "峰值亮度来源"
+
+#. "杜比视界 HDR10+"
+#: system/settings/settings.xml
+msgctxt "#50104"
+msgid "Source for Peak Brightness when converting from HDR10+ to Dolby Vision profile 8.1. (port from dovi_tool Aug. 2024)"
+msgstr "从HDR10+转换为杜比视界P8.1时的峰值亮度来源。（来自dovi_tool的移植，2024年8月）"
+
+#. "杜比视界 HDR10+"
+#: system/settings/settings.xml
+msgctxt "#50105"
+msgid "histogram"
+msgstr "直方图"
+
+#. "杜比视界 HDR10+"
+#: system/settings/settings.xml
+msgctxt "#50106"
+msgid "histogram99"
+msgstr "直方图99"
+
+#. "杜比视界 HDR10+"
+#: system/settings/settings.xml
+msgctxt "#50107"
+msgid "max-scl"
+msgstr "最大 SCL"
+
+#. "杜比视界 HDR10+"
+#: system/settings/settings.xml
+msgctxt "#50108"
+msgid "max-scl-luminance"
+msgstr "最大 SCL 亮度"
+
+#. "杜比视界 HDR10+"
+#: system/settings/settings.xml
+msgctxt "#50109"
+msgid "histogram-plus"
+msgstr "直方图加强"
+
+#. "杜比视界 HDR10+"
+#: system/settings/settings.xml
+msgctxt "#50121"
+msgid "Prefer conversion over original Dolby Vision"
+msgstr "优先转换而非原生杜比视界"
+
+#. "杜比视界 HDR10+"
+#: system/settings/settings.xml
+msgctxt "#50122"
+msgid "When Dolby Vision and HDR10+ are both present, prefer conversion from HDR10+ over using the original Dolby Vision, note any FEL will be discarded in this case."
+msgstr "当Dolby Vision和HDR10+同时存在时，偏好从HDR10+转换，而不是使用原始的Dolby Vision，注意在此情况下任何FEL将被丢弃。"
+
+#. "杜比视界 HDR10+"
+#: system/settings/settings.xml
+msgctxt "#50131"
+msgid "Preferred HDR for dual Dolby Vision and HDR10+ content"
+msgstr "双重Dolby Vision和HDR10+内容的首选HDR"
+
+#. "杜比视界 HDR10+"
+#: system/settings/settings.xml
+msgctxt "#50132"
+msgid "When Dolby Vision and HDR10+ are both present, which HDR to prefer."
+msgstr "当Dolby Vision和HDR10+同时存在时，应偏好哪一种HDR。"
+
+#. "杜比视界 HDR10+"
+#: system/settings/settings.xml
+msgctxt "#50133"
+msgid "Dolby Vision"
+msgstr "Dolby Vision"
+
+#. "杜比视界 HDR10+"
+#: system/settings/settings.xml
+msgctxt "#50134"
+msgid "HDR10+"
+msgstr "HDR10+"
+
+
+#. "Dolby Vision Display Led Source Levels Metadata"
+#: system/settings/settings.xml
+msgctxt "#50150"
+msgid "Source levels metadata"
+msgstr "源级别元数据"
+
+#. "Dolby Vision Display Led Source Levels Metadata"
+#: system/settings/settings.xml
+msgctxt "#50151"
+msgid "When using Display Led (DV-Std), send the source's levels Metadata, otherwise send then Dolby Vision engines altered levels metadata to the display."
+msgstr "当使用显示 LED（DV-Std）时，发送源的级别元数据，否则将杜比视界引擎改变的级别元数据发送到显示器。"
+
+
+#. "Dolby Vision Display Led Level 5 Handling"
+#: system/settings/settings.xml
+msgctxt "#50160"
+msgid "Level 5"
+msgstr "等级 5"
+
+#. "Dolby Vision Display Led Level 5 Handling"
+#: system/settings/settings.xml
+msgctxt "#50161"
+msgid "When using Display Led (DV-Std) and sending the source's level 5 metadata to the diplay, choose how to handle the metadata."
+msgstr "当使用 Display Led (DV-Std) 并将源的 5 级元数据发送到显示器时，选择如何处理元数据。"
+
+#. "Dolby Vision Display Led Level 5 Handling"
+#: system/settings/settings.xml
+msgctxt "#50170"
+msgid "Discard"
+msgstr "丢弃"
+
+#. "Dolby Vision Display Led Level 5 Handling"
+#: system/settings/settings.xml
+msgctxt "#50171"
+msgid "Source"
+msgstr "来源"
+
+#. "Dolby Vision Display Led Level 5 Handling"
+#: system/settings/settings.xml
+msgctxt "#50172"
+msgid "0 (zero)"
+msgstr ""
+
+#. "Dolby Vision Display Led Level 5 Handling"
+#: system/settings/settings.xml
+msgctxt "#50173"
+msgid "Source, 0 (zero) when OSD is active or subtiles set on"
+msgstr ""
+
+#. "Dolby Vision Display Led Level 5 Handling"
+#: system/settings/settings.xml
+msgctxt "#50174"
+msgid "Source, 0 (zero) when OSD is active"
+msgstr ""
+
+#. "Dolby Vision Display Led Level 6 Handling"
+#: system/settings/settings.xml
+msgctxt "#50180"
+msgid "Level 6"
+msgstr "等级 6"
+
+#. "Dolby Vision Display Led Level 6 Handling"
+#: system/settings/settings.xml
+msgctxt "#50181"
+msgid "When using Display Led (DV-Std) and sending the source's level 6 metadata to the diplay, choose how to handle the metadata."
+msgstr "当使用 Display Led (DV-Std) 并将源的 6 级元数据发送到显示器时，选择如何处理元数据。"
+
+#. "Dolby Vision Display Led Restrict Overlays"
+#: system/settings/settings.xml
+msgctxt "#50190"
+msgid "Restrict overlays"
+msgstr "限制覆盖"
+
+#. "Dolby Vision Display Led Restrict Overlays"
+#: system/settings/settings.xml
+msgctxt "#50191"
+msgid "When using Display Led (DV-Std) should overlays be restricted to the active area only."
+msgstr "使用显示 LED（DV-Std）时，覆盖应仅限于活动区域。"
+
+#. "Dolby Vision Display LL Dolby VSVDB Limit"
+#: system/settings/settings.xml
+msgctxt "#50200"
+msgid "Limit VSVDB luminance"
+msgstr "限制 VSVDB 亮度"
+
+#. "Dolby Vision Display LL Dolby VSVDB Limit"
+#: system/settings/settings.xml
+msgctxt "#50201"
+msgid "When using Player Led (DV-LL / HDR) limit the VSVDB min / max luminance to match the source being played."
+msgstr "当使用播放器 LED（DV-LL / HDR）时，限制 VSVDB 最小 / 最大亮度以匹配正在播放的源。"
+
+#. "Dolby Vision Display LL Dolby VSVDB Limit"
+#: system/settings/settings.xml
+msgctxt "#50202"
+msgid "Do not limit"
+msgstr "不限制"
+
+#. "Dolby Vision Display LL Dolby VSVDB Limit"
+#: system/settings/settings.xml
+msgctxt "#50203"
+msgid "Limit min and max"
+msgstr "限制最小值和最大值"
+
+#. "Dolby Vision Display LL Dolby VSVDB Limit"
+#: system/settings/settings.xml
+msgctxt "#50204"
+msgid "Limit max only"
+msgstr "仅限制最大值"
+
+
