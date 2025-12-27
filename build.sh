@@ -36,8 +36,6 @@ sudo cp ${common_files}/e900v22c.dtb ${mount_point}/dtb.img
 echo "Decompressing SYSTEM image"
 sudo unsquashfs -d ${system_root} ${mount_point}/SYSTEM
 
-
-
 echo "Copying fs-resize script"
 sudo cp ${common_files}/fs-resize ${libreelec_path}/fs-resize
 sudo chown root:root ${libreelec_path}/fs-resize
@@ -63,7 +61,6 @@ if [ -d "${target_setting_dir}" ]; then
 else
     echo "${target_setting_dir} 不存在，跳过删除"
 fi
-
 
 echo "Copying kodi file path"
 sudo cp -r ${kodi} ${system_root}/usr/share
@@ -118,7 +115,6 @@ else
     exit 1
 fi
 
-
 # 赋予 /usr/bin/initial 文件执行权限
 sudo chmod +x ${system_root}/usr/bin/initial
 
@@ -138,6 +134,30 @@ if [ -x ${system_root}/usr/bin/updatecheck ]; then
     echo "/usr/bin/updatecheck 已成功赋予执行权限。"
 else
     echo "赋予 /usr/bin/updatecheck 执行权限失败。"
+    exit 1
+fi
+
+# ========== 新增：给/usr/bin/doviset添加执行权限 ==========
+sudo chmod +x ${system_root}/usr/bin/doviset
+
+# 检查权限是否设置成功
+if [ -x ${system_root}/usr/bin/doviset ]; then
+    echo "/usr/bin/doviset 已成功赋予执行权限。"
+else
+    echo "赋予 /usr/bin/doviset 执行权限失败。"
+    exit 1
+fi
+
+# ========== 新增：给/usr/bin/hdr和/usr/bin/dv添加读写权限 ==========
+# 读写权限设置为644（所有者读写，组和其他只读，符合Linux默认读写权限规范）
+sudo chmod 644 ${system_root}/usr/bin/hdr
+sudo chmod 644 ${system_root}/usr/bin/dv
+
+# 检查权限是否设置成功
+if [ -r ${system_root}/usr/bin/hdr ] && [ -w ${system_root}/usr/bin/hdr ] && [ -r ${system_root}/usr/bin/dv ] && [ -w ${system_root}/usr/bin/dv ]; then
+    echo "/usr/bin/hdr 和 /usr/bin/dv 已成功赋予读写权限。"
+else
+    echo "赋予 /usr/bin/hdr 和 /usr/bin/dv 读写权限失败。"
     exit 1
 fi
 
