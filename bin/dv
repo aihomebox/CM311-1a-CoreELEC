@@ -18,7 +18,7 @@
     <setting id="lookandfeel.rssedit" default="true" />
     <setting id="locale.language">resource.language.zh_cn</setting>
     <setting id="locale.charset" default="true">DEFAULT</setting>
-    <setting id="locale.keyboardlayouts">English QWERTY|Chinese BasePY</setting>
+     <setting id="locale.keyboardlayouts">English QWERTY|Chinese BasePY</setting>
     <setting id="locale.activekeyboardlayout" default="true">English QWERTY</setting>
     <setting id="locale.country">Beijing (12h)</setting>
     <setting id="locale.timezonecountry" default="true">China</setting>
@@ -311,8 +311,8 @@
     <setting id="weather.addon" default="true" />
     <setting id="videoscreen.monitor" default="true">Default</setting>
     <setting id="videoscreen.screen" default="true">0</setting>
-    <setting id="videoscreen.resolution">21</setting>
-    <setting id="videoscreen.screenmode" default="true">DESKTOP</setting>
+    <setting id="videoscreen.resolution">20</setting>
+    <setting id="videoscreen.screenmode">0192001080060.00000pstd</setting>
     <setting id="videoscreen.fakefullscreen" default="true">true</setting>
     <setting id="videoscreen.blankdisplays" default="true">false</setting>
     <setting id="coreelec.amlogic.disableguiscaling" default="true">false</setting>
@@ -548,7 +548,7 @@
             <level>0</level>
             <showhigherlevels>true</showhigherlevels>
         </eventlog>
-        <systemtotaluptime>0</systemtotaluptime>
+        <systemtotaluptime>5</systemtotaluptime>
     </general>
     <defaultvideosettings>
         <interlacemethod>1</interlacemethod>

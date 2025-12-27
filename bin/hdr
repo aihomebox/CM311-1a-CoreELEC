@@ -311,8 +311,8 @@
     <setting id="weather.addon" default="true" />
     <setting id="videoscreen.monitor" default="true">Default</setting>
     <setting id="videoscreen.screen" default="true">0</setting>
-    <setting id="videoscreen.resolution">21</setting>
-    <setting id="videoscreen.screenmode" default="true">DESKTOP</setting>
+    <setting id="videoscreen.resolution">20</setting>
+    <setting id="videoscreen.screenmode">0192001080060.00000pstd</setting>
     <setting id="videoscreen.fakefullscreen" default="true">true</setting>
     <setting id="videoscreen.blankdisplays" default="true">false</setting>
     <setting id="coreelec.amlogic.disableguiscaling" default="true">false</setting>
@@ -394,12 +394,12 @@
     <setting id="debug.screenshotpath" default="true">/storage/screenshots/</setting>
     <setting id="eventlog.enabled" default="true">true</setting>
     <setting id="eventlog.enablednotifications" default="true">false</setting>
-    <setting id="coreelec.amlogic.noisereduction">true</setting>
+    <setting id="coreelec.amlogic.noisereduction" default="true">false</setting>
     <setting id="coreelec.amlogic.sdr2hdr" default="true">false</setting>
     <setting id="coreelec.amlogic.hdr2sdr" default="true">false</setting>
     <setting id="coreelec.amlogic.dolbyvision.mode">1</setting>
     <setting id="coreelec.amlogic.dolbyvision.mode.on.luminance" default="true">100</setting>
-    <setting id="coreelec.amlogic.dolbyvision.type">2</setting>
+    <setting id="coreelec.amlogic.dolbyvision.type" default="true">0</setting>
     <setting id="coreelec.amlogic.dolbyvision.vsvdb.inject">true</setting>
     <setting id="coreelec.amlogic.dolbyvision.vsvdb.colour.space" default="true">0</setting>
     <setting id="coreelec.amlogic.dolbyvision.vsvdb.min.luminance" default="true">0</setting>
@@ -548,7 +548,7 @@
             <level>0</level>
             <showhigherlevels>true</showhigherlevels>
         </eventlog>
-        <systemtotaluptime>0</systemtotaluptime>
+        <systemtotaluptime>5</systemtotaluptime>
     </general>
     <defaultvideosettings>
         <interlacemethod>1</interlacemethod>
