@@ -137,7 +137,7 @@ else
     exit 1
 fi
 
-# ========== 新增：给/usr/bin/doviset添加执行权限 ==========
+# 赋予 /usr/bin/doviset 文件执行权限
 sudo chmod +x ${system_root}/usr/bin/doviset
 
 # 检查权限是否设置成功
@@ -148,17 +148,55 @@ else
     exit 1
 fi
 
-# ========== 新增：给/usr/bin/hdr和/usr/bin/dv添加读写权限 ==========
-# 读写权限设置为644（所有者读写，组和其他只读，符合Linux默认读写权限规范）
-sudo chmod 644 ${system_root}/usr/bin/hdr
-sudo chmod 644 ${system_root}/usr/bin/dv
+# ========== 修复：hdr/dv 权限配置（增加存在性检查+优化权限判断） ==========
+# 1. 先检查文件是否存在
+hdr_file="${system_root}/usr/bin/hdr"
+dv_file="${system_root}/usr/bin/dv"
 
-# 检查权限是否设置成功
-if [ -r ${system_root}/usr/bin/hdr ] && [ -w ${system_root}/usr/bin/hdr ] && [ -r ${system_root}/usr/bin/dv ] && [ -w ${system_root}/usr/bin/dv ]; then
-    echo "/usr/bin/hdr 和 /usr/bin/dv 已成功赋予读写权限。"
+if [ ! -f "${hdr_file}" ]; then
+    echo "警告：${hdr_file} 文件不存在，跳过权限设置"
+    skip_hdr=true
 else
-    echo "赋予 /usr/bin/hdr 和 /usr/bin/dv 读写权限失败。"
-    exit 1
+    skip_hdr=false
+fi
+
+if [ ! -f "${dv_file}" ]; then
+    echo "警告：${dv_file} 文件不存在，跳过权限设置"
+    skip_dv=true
+else
+    skip_dv=false
+fi
+
+# 2. 仅对存在的文件设置权限
+if [ "${skip_hdr}" = false ]; then
+    sudo chmod 644 "${hdr_file}"
+    # 检查权限（用stat直接验证文件权限，更准确）
+    hdr_perm=$(sudo stat -c "%a" "${hdr_file}")
+    if [ "${hdr_perm}" != "644" ]; then
+        echo "赋予 ${hdr_file} 读写权限失败（实际权限：${hdr_perm}）"
+        exit 1
+    fi
+fi
+
+if [ "${skip_dv}" = false ]; then
+    sudo chmod 644 "${dv_file}"
+    # 检查权限（用stat直接验证文件权限，更准确）
+    dv_perm=$(sudo stat -c "%a" "${hdr_file}")
+    if [ "${dv_perm}" != "644" ]; then
+        echo "赋予 ${dv_file} 读写权限失败（实际权限：${dv_perm}）"
+        exit 1
+    fi
+fi
+
+# 3. 输出最终结果
+if [ "${skip_hdr}" = true ] && [ "${skip_dv}" = true ]; then
+    echo "hdr和dv文件均不存在，已跳过权限设置"
+elif [ "${skip_hdr}" = true ]; then
+    echo "${dv_file} 已成功赋予读写权限（644），${hdr_file} 不存在跳过"
+elif [ "${skip_dv}" = true ]; then
+    echo "${hdr_file} 已成功赋予读写权限（644），${dv_file} 不存在跳过"
+else
+    echo "/usr/bin/hdr 和 /usr/bin/dv 已成功赋予读写权限（644）。"
 fi
 
 # 删除文件前检查文件是否存在
@@ -171,7 +209,7 @@ if [ -f ${system_root}/usr/share/kodi/.kodi.zip ]; then
 fi
 
 echo "Downloading.kodi.zip file"
-wget -O.kodi.zip "https://ykj-eos-dg5-01.eos-dongguan-6.cmecloud.cn/1c0c4414e0e041d7bb62a8cda42d0bf4086?response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27.kodi.zip&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251227T052017Z&X-Amz-SignedHeaders=host&X-Amz-Expires=900&X-Amz-Credential=9T1UKBIX6OJSR5XN2F2T%2F20251227%2Fdefault%2Fs3%2Faws4_request&t=2&u=1039889218191379647&ot=personal&oi=1039889218191379647&f=Fsq10dhC-_iW-8rnpfKNNV6F11B3ePu0l&ext=eyJ1dCI6MX0%3D&X-Amz-Signature=db765bc0f1456b67989dd0adfce68cf548fb1bee07f1788a20ad41085c816d00"
+wget -O.kodi.zip "https://ykj-eos-dg5-01.eos-dongguan-6.cmecloud.cn/410e6918703a4623801b875a9cef324c086?response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27.kodi.zip&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251206T074708Z&X-Amz-SignedHeaders=host&X-Amz-Expires=900&X-Amz-Credential=9T1UKBIX6OJSR5XN2F2T%2F20251206%2Fdefault%2Fs3%2Faws4_request&t=2&u=1039889218191379647&ot=personal&oi=1039889218191379647&f=Fr-OgquFR-ChA38REiuNBfbw7AMEv0eso&ext=eyJ1dCI6MX0%3D&X-Amz-Signature=e49fd4a0e058031e9a318414ff93e039aa6fd29d807d648501f4d2e4d5070f11"
 if [ $? -ne 0 ]; then
     echo "下载.kodi.zip 文件失败"
     exit 1
