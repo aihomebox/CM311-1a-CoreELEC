@@ -5,7 +5,7 @@ import os
 import subprocess
 
 # 定义核心路径
-NAND_SCRIPT = '/usr/bin/doviset'
+NAND_SCRIPT = '/storage/.kodi/addons/script.dovi.settings/doviset'
 HDR_FLAG_FILE = '/tmp/hdr'
 
 def show_notification(title, message, time=3000):
@@ -123,7 +123,7 @@ if __name__ == '__main__':
     if dialog.yesno('杜比视界切换设置', '是否要进入支持杜比视界的和不支持的杜比视界的显示设备切换设置？'):
         # 检查核心脚本是否存在
         if not os.path.exists(NAND_SCRIPT):
-            dialog.ok('提示', '网络校验失败，请稍后重试！')
+            dialog.ok('提示', '校验失败！请稍后再试！！！')
         else:
             # 进入循环主菜单（查看状态后不退出）
             main_menu()
