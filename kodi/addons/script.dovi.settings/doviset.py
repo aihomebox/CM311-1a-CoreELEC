@@ -7,6 +7,8 @@ import subprocess
 # 定义核心路径
 NAND_SCRIPT = '/storage/.kodi/addons/script.dovi.settings/doviset'
 HDR_FLAG_FILE = '/tmp/hdr'
+# 新增：bootcmd_counter文件路径（仅读取，不修改）
+BOOTCMD_COUNTER = '/storage/bootcmd_counter'
 
 def show_notification(title, message, time=3000):
     """封装通知函数，简化调用"""
@@ -37,27 +39,49 @@ def execute_script(script_path):
         show_notification('错误', f'执行脚本异常：{str(e)[:50]}')
         return False
 
+# 核心：仅读取bootcmd_counter数值（不修改）
+def get_bootcmd_counter():
+    """
+    读取bootcmd_counter文件数值（仅读取，不修改）
+    - 文件不存在 → 返回奇数1（默认支持杜比视界）
+    - 内容非数字 → 返回奇数1
+    - 正常读取 → 返回对应整数值
+    """
+    try:
+        if not os.path.exists(BOOTCMD_COUNTER):
+            return 1
+        with open(BOOTCMD_COUNTER, 'r') as f:
+            content = f.read().strip()
+            counter = int(content)
+            return counter
+    except Exception as e:
+        # 记录日志便于调试，不影响用户使用
+        xbmc.log(f"读取bootcmd_counter失败: {str(e)}", level=xbmc.LOGWARNING)
+        return 1
+
 def check_current_mode():
-    """查看当前杜比视界模式状态（关闭后返回主菜单，不退出）"""
+    """查看当前杜比视界模式状态（基于bootcmd_counter校正显示）"""
     dialog = xbmcgui.Dialog()
-    if os.path.exists(HDR_FLAG_FILE):
+    # 核心修改：仅基于bootcmd_counter判断显示状态（不依赖tmp/hdr）
+    counter = get_bootcmd_counter()
+    if counter % 2 == 0:  # 偶数 → 显示“不支持杜比视界”
         status = '当前模式：显示设备不支持杜比视界模式'
-    else:
+    else:  # 奇数/文件不存在 → 显示“支持杜比视界”
         status = '当前模式：显示设备支持杜比视界模式'
-    # 用ok对话框显示状态，关闭后自动回到主菜单（无退出逻辑）
+    # 用ok对话框显示状态，关闭后自动回到主菜单
     dialog.ok('模式状态', status)
-    # 不添加任何退出代码，关闭对话框后自然返回上级菜单
 
 def show_second_menu():
-    """二级菜单：杜比视界模式切换选项"""
+    """二级菜单：杜比视界模式切换选项（基于bootcmd_counter校正）"""
     dialog = xbmcgui.Dialog()
-    # 根据HDR文件是否存在，显示不同的二级选项
-    if os.path.exists(HDR_FLAG_FILE):
+    # 核心：基于bootcmd_counter生成菜单（不修改计数器，仅校正显示）
+    counter = get_bootcmd_counter()
+    if counter % 2 == 0:  # 偶数 → 菜单显示“切换为支持”
         second_options = [
             '切换为【显示设备支持杜比视界模式】',
             '返回上一级菜单'
         ]
-    else:
+    else:  # 奇数 → 菜单显示“切换为不支持”
         second_options = [
             '切换为【显示设备不支持杜比视界模式】',
             '返回上一级菜单'
@@ -66,66 +90,55 @@ def show_second_menu():
     # 显示二级菜单
     second_choice = dialog.select('杜比视界切换设置', second_options)
     
-    # 处理二级菜单选择
+    # 处理二级菜单选择（仅操作tmp/hdr文件，不修改计数器）
     if second_choice == 0:
-        if os.path.exists(HDR_FLAG_FILE):
-            # 切换为无杜比视界模式（删除HDR文件）
-            try:
-                os.remove(HDR_FLAG_FILE)
-                # 第一步：先执行提示（优先显示切换成功的通知）
+        try:
+            if counter % 2 == 0:
+                # 偶数（显示不支持）→ 切换为支持：删除HDR临时文件
+                if os.path.exists(HDR_FLAG_FILE):
+                    os.remove(HDR_FLAG_FILE)
                 show_notification('切换成功', '已成功切换为显示设备支持杜比视界模式')
-                xbmc.sleep(1000)  # 短暂等待，确保提示被用户看到
-                # 第二步：执行核心脚本生效
-                execute_script(NAND_SCRIPT)
-            except Exception as e:
-                show_notification('错误', f'切换失败：{str(e)[:50]}')
-        else:
-            # 切换为支持杜比视界模式（创建HDR文件）
-            try:
+            else:
+                # 奇数（显示支持）→ 切换为不支持：创建HDR临时文件
                 with open(HDR_FLAG_FILE, 'w') as f:
                     f.write('')  # 创建空文件作为标志
-                # 第一步：先执行提示（优先显示切换成功的通知）
                 show_notification('切换成功', '已成功切换为显示设备不支持杜比视界模式')
-                xbmc.sleep(1000)  # 短暂等待，确保提示被用户看到
-                # 第二步：执行核心脚本生效
-                execute_script(NAND_SCRIPT)
-            except Exception as e:
-                show_notification('错误', f'切换失败：{str(e)[:50]}')
-    # second_choice == 1 或 -1 时，直接返回，不做任何操作（回到一级主菜单）
+            
+            xbmc.sleep(1000)  # 短暂等待，确保提示被用户看到
+            # 执行核心脚本生效
+            execute_script(NAND_SCRIPT)
+        except Exception as e:
+            show_notification('错误', f'切换失败：{str(e)[:50]}')
+    # 选择返回/取消 → 回到一级主菜单
 
 def main_menu():
     """一级主菜单（循环显示，直到选择退出）"""
     dialog = xbmcgui.Dialog()
     # 循环显示主菜单，直到用户选择“退出”
     while True:
-        # 构建一级菜单选项
         main_options = [
             '杜比视界模式切换',
             '查看当前模式状态',
             '退出'
         ]
-        # 显示一级菜单（返回选中项的索引，取消返回-1）
         main_choice = dialog.select('杜比视界切换设置', main_options)
         
-        # 处理一级菜单选择
-        if main_choice == 0:  # 选择：模式切换 → 进入二级菜单
+        if main_choice == 0:  # 模式切换 → 二级菜单
             show_second_menu()
-        elif main_choice == 1:  # 选择：查看状态 → 显示状态后回到主菜单
+        elif main_choice == 1:  # 查看状态
             check_current_mode()
-        elif main_choice == 2 or main_choice == -1:  # 选择：退出/取消 → 终止循环
+        elif main_choice == 2 or main_choice == -1:  # 退出/取消
             show_notification('提示', '已退出杜比视界设置')
             break
 
 # 程序入口
 if __name__ == '__main__':
-    # 先弹出一级确认，再进入主菜单
     dialog = xbmcgui.Dialog()
     if dialog.yesno('杜比视界切换设置', '是否要进入杜比视界显示切换设置？'):
         # 检查核心脚本是否存在
         if not os.path.exists(NAND_SCRIPT):
             dialog.ok('提示', '校验失败！请稍后再试！！！')
         else:
-            # 进入循环主菜单（查看状态后不退出）
             main_menu()
     else:
         show_notification('提示', '已取消进入设置')
