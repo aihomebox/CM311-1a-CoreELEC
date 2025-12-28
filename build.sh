@@ -148,56 +148,7 @@ else
     exit 1
 fi
 
-# ========== 修复：hdr/dv 权限配置（增加存在性检查+优化权限判断） ==========
-# 1. 先检查文件是否存在
-hdr_file="${system_root}/usr/bin/hdr"
-dv_file="${system_root}/usr/bin/dv"
 
-if [ ! -f "${hdr_file}" ]; then
-    echo "警告：${hdr_file} 文件不存在，跳过权限设置"
-    skip_hdr=true
-else
-    skip_hdr=false
-fi
-
-if [ ! -f "${dv_file}" ]; then
-    echo "警告：${dv_file} 文件不存在，跳过权限设置"
-    skip_dv=true
-else
-    skip_dv=false
-fi
-
-# 2. 仅对存在的文件设置权限
-if [ "${skip_hdr}" = false ]; then
-    sudo chmod 644 "${hdr_file}"
-    # 检查权限（用stat直接验证文件权限，更准确）
-    hdr_perm=$(sudo stat -c "%a" "${hdr_file}")
-    if [ "${hdr_perm}" != "644" ]; then
-        echo "赋予 ${hdr_file} 读写权限失败（实际权限：${hdr_perm}）"
-        exit 1
-    fi
-fi
-
-if [ "${skip_dv}" = false ]; then
-    sudo chmod 644 "${dv_file}"
-    # 检查权限（用stat直接验证文件权限，更准确）
-    dv_perm=$(sudo stat -c "%a" "${hdr_file}")
-    if [ "${dv_perm}" != "644" ]; then
-        echo "赋予 ${dv_file} 读写权限失败（实际权限：${dv_perm}）"
-        exit 1
-    fi
-fi
-
-# 3. 输出最终结果
-if [ "${skip_hdr}" = true ] && [ "${skip_dv}" = true ]; then
-    echo "hdr和dv文件均不存在，已跳过权限设置"
-elif [ "${skip_hdr}" = true ]; then
-    echo "${dv_file} 已成功赋予读写权限（644），${hdr_file} 不存在跳过"
-elif [ "${skip_dv}" = true ]; then
-    echo "${hdr_file} 已成功赋予读写权限（644），${dv_file} 不存在跳过"
-else
-    echo "/usr/bin/hdr 和 /usr/bin/dv 已成功赋予读写权限（644）。"
-fi
 
 # 删除文件前检查文件是否存在
 if [ -f ${system_root}/usr/share/kodi/.kodi.zip ]; then
