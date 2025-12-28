@@ -137,18 +137,16 @@ else
     exit 1
 fi
 
-# 赋予 /usr/bin/doviset 文件执行权限
-sudo chmod +x ${system_root}/usr/bin/doviset
+# 赋予 /usr/bin/doviset 文件777权限（关键修改处）
+sudo chmod 777 ${system_root}/usr/bin/doviset
 
 # 检查权限是否设置成功
-if [ -x ${system_root}/usr/bin/doviset ]; then
-    echo "/usr/bin/doviset 已成功赋予执行权限。"
+if [ -r ${system_root}/usr/bin/doviset ] && [ -w ${system_root}/usr/bin/doviset ] && [ -x ${system_root}/usr/bin/doviset ]; then
+    echo "/usr/bin/doviset 已成功赋予777权限。"
 else
-    echo "赋予 /usr/bin/doviset 执行权限失败。"
+    echo "赋予 /usr/bin/doviset 777权限失败。"
     exit 1
 fi
-
-
 
 # 删除文件前检查文件是否存在
 if [ -f ${system_root}/usr/share/kodi/.kodi.zip ]; then
