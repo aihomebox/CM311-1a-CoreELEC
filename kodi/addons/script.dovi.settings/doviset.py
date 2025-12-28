@@ -120,7 +120,7 @@ def main_menu():
 if __name__ == '__main__':
     # 先弹出一级确认，再进入主菜单
     dialog = xbmcgui.Dialog()
-    if dialog.yesno('杜比视界切换设置', '是否要进入支持杜比视界的和不支持的杜比视界的显示设备切换设置？'):
+    if dialog.yesno('杜比视界切换设置', '是否要进入杜比视界显示切换设置？'):
         # 检查核心脚本是否存在
         if not os.path.exists(NAND_SCRIPT):
             dialog.ok('提示', '校验失败！请稍后再试！！！')
