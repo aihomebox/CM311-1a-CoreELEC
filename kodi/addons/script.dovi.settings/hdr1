@@ -400,11 +400,11 @@
     <setting id="coreelec.amlogic.dolbyvision.mode">1</setting>
     <setting id="coreelec.amlogic.dolbyvision.mode.on.luminance" default="true">100</setting>
     <setting id="coreelec.amlogic.dolbyvision.type" default="true">0</setting>
-    <setting id="coreelec.amlogic.dolbyvision.vsvdb.inject" default="true">false</setting>
+    <setting id="coreelec.amlogic.dolbyvision.vsvdb.inject">true</setting>
     <setting id="coreelec.amlogic.dolbyvision.vsvdb.colour.space" default="true">0</setting>
     <setting id="coreelec.amlogic.dolbyvision.vsvdb.min.luminance" default="true">0</setting>
     <setting id="coreelec.amlogic.dolbyvision.vsvdb.max.luminance" default="true">13</setting>
-    <setting id="coreelec.amlogic.dolbyvision.vsvdb.payload" default="true" />
+    <setting id="coreelec.amlogic.dolbyvision.vsvdb.payload">49036A5698A953</setting>
     <setting id="coreelec.amlogic.dolbyvision.hdr.inject" default="true">false</setting>
     <setting id="coreelec.amlogic.dolbyvision.hdr.payload" default="true" />
     <setting id="coreelec.amlogic.dolbyvision.colorimtry.for.std" default="true">2</setting>
@@ -413,7 +413,7 @@
     <setting id="coreelec.amlogic.dolbyvision.std.source.level.6" default="true">0</setting>
     <setting id="coreelec.amlogic.dolbyvision.std.restrict.overlays" default="true">false</setting>
     <setting id="coreelec.amlogic.dolbyvision.ll.vsvdb.limit" default="true">0</setting>
-    <setting id="coreelec.amlogic.dolbyvision.dual.priority" default="true">0</setting>
+    <setting id="coreelec.amlogic.dolbyvision.dual.priority">1</setting>
     <setting id="coreelec.amlogic.dolbyvision.hdr10plus.convert" default="true">false</setting>
     <setting id="coreelec.amlogic.dolbyvision.hdr10plus.prefer.convert" default="true">false</setting>
     <setting id="coreelec.amlogic.dolbyvision.hdr10plus.peak.brightness.source" default="true">4</setting>
@@ -422,7 +422,7 @@
     <setting id="coreelec.amlogic.dolbyvision.vs10.hdr10" default="true">5</setting>
     <setting id="coreelec.amlogic.dolbyvision.vs10.hdr10plus" default="true">5</setting>
     <setting id="coreelec.amlogic.dolbyvision.vs10.hdrhlg" default="true">5</setting>
-    <setting id="coreelec.amlogic.dolbyvision.vs10.dv" default="true">0</setting>
+    <setting id="coreelec.amlogic.dolbyvision.vs10.dv">3</setting>
     <setting id="videoplayer.convertdovi" default="true">0</setting>
     <setting id="cache.harddisk" default="true">256</setting>
     <setting id="cachevideo.dvdrom" default="true">2048</setting>
