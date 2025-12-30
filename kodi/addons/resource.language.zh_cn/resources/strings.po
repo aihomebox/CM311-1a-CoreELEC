@@ -20756,7 +20756,7 @@ msgstr "当Dolby Vision和HDR10+同时存在时，偏好从HDR10+转换，而不
 #: system/settings/settings.xml
 msgctxt "#50131"
 msgid "Preferred HDR for dual Dolby Vision and HDR10+ content"
-msgstr "双重Dolby Vision和HDR10+内容的首选HDR"
+msgstr "双层Dolby Vision和HDR10+内容的首选HDR"
 
 #. "杜比视界 HDR10+"
 #: system/settings/settings.xml
